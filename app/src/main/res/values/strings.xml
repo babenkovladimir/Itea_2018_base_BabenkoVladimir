@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">android-base-homeworks</string>
+    <string name="btn_1">BTN 1</string>
+    <string name="btn_2">BTN 2</string>
+</resources>
