@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btB = findViewById(R.id.btB);
 
         btA.setOnClickListener(view -> btA.setText(
-            btA.getText().equals(R.string.btn_1) ? R.string.btn_2 : R.string.btn_1));
+            btA.getText().equals(getResources().getString(R.string.btn_1)) ? R.string.btn_2 : R.string.btn_1));
         btB.setOnClickListener(
             view -> btB.setText(new Random().nextBoolean() ? R.string.btn_2 : R.string.btn_1));
     }
