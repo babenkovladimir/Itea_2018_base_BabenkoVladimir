@@ -2,4 +2,11 @@
     <string name="app_name">android-base-homeworks</string>
     <string name="btn_1">BTN 1</string>
     <string name="btn_2">BTN 2</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign up</string>
+    <string name="terms">Terms</string>
+    <string name="password">Password</string>
+    <string name="or">OR</string>
+    <string name="login">Login</string>
 </resources>
