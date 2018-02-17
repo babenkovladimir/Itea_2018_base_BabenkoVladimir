@@ -71,7 +71,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="36dp"
         android:baselineAligned="true"
         android:orientation="vertical"
         >
@@ -79,7 +79,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="5dp"
             android:weightSum="12"
             >
 
@@ -113,19 +113,19 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
             >
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/etLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/login"
-                android:shadowColor="@color/colorButtonLogin"
-
                 android:textColor="@color/colorWhite"
+                android:inputType="textEmailAddress"
                 />
 
         </android.support.design.widget.TextInputLayout>
+
+        <!--It's possible to use android:inputType="numberPassword" -->
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
@@ -137,14 +137,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
-                android:inputType="numberPassword"
-                android:shadowColor="@color/colorButtonLogin"
-
                 android:textColor="@color/colorWhite"
-
+                android:inputType="numberPassword"
                 />
-
-
         </android.support.design.widget.TextInputLayout>
 
 
