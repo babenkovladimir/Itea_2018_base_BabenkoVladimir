@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorButtonLogin">#54a30c</color>
-    <color name="colorTvHint">#c8d1c1</color>
+    <color name="colorTvHint">#c6cec1</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorFacebookBlue">#3b5998</color>
+    <color name="colorGoogleRed">#db3236</color>
 
 </resources>

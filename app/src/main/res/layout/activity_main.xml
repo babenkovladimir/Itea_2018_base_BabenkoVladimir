@@ -3,36 +3,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-
-    android:background="@drawable/background"
+    android:background="@drawable/background1"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingEnd="24dp"
     android:paddingStart="24dp"
-    tools:context="com.example.vladimirbabenko.android_base_homeworks.MainActivity">
-
+    tools:context="com.example.vladimirbabenko.android_base_homeworks.MainActivity"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/hello_again"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in_using"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:weightSum="11"
+            >
+
+            <Button
+                android:id="@+id/btGoogleSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="@color/colorGoogleRed"
+                android:drawableStart="@drawable/google_plus"
+
+                />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
+            <Button
+                android:id="@+id/btFacebookSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:background="@color/colorFacebookBlue"
+                android:drawableStart="@drawable/facebook"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:baselineAligned="true"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:weightSum="10">
+            android:weightSum="12"
+            >
 
-            <view
+            <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="4"
-                android:background="@android:color/white" />
-
+                android:layout_weight="5"
+                android:background="@android:color/white"
+                />
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -42,38 +98,46 @@
                 android:gravity="center"
                 android:text="@string/or"
                 android:textColor="@android:color/white"
-                android:textSize="16sp" />
-
-            <view
+                android:textSize="16sp"
+                />
+            <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="4"
-                android:background="@android:color/white" />
+                android:layout_weight="5"
+                android:background="@android:color/white"
+                />
         </LinearLayout>
 
         <EditText
+            android:id="@+id/etLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/login"
-            android:textColorHint="@color/colorTvHint" />
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorTvHint"
+            />
 
         <EditText
+            android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:hint="@string/password"
-
-            android:textColorHint="@color/colorTvHint" />
+            android:inputType="numberPassword"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorTvHint"
+            />
 
         <Button
             android:id="@+id/btLogin"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginBottom="25dp"
+            android:layout_marginBottom="12dp"
             android:background="@color/colorButtonLogin"
             android:text="@string/log_in"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            />
 
         <TextView
             android:id="@+id/tvFogotPassword"
@@ -81,14 +145,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/forgot_your_password"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white"
+            />
 
     </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <Button
             android:id="@+id/btSignUp"
@@ -100,7 +166,8 @@
             android:paddingStart="1dp"
             android:text="@string/sign_up"
             android:textColor="@android:color/white"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            />
 
         <Button
             android:id="@+id/btTerms"
@@ -113,9 +180,9 @@
             android:paddingStart="1dp"
             android:text="@string/terms"
             android:textColor="@android:color/white"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            />
 
     </FrameLayout>
-
 
 </LinearLayout>
