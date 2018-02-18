@@ -10,14 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity" 
-            android:label="Sign In"
-            >
-
+        <!-- android:screenOrientation="landscape" -->
+        <!-- android:screenOrientation="portrait" -->
+        <activity
+            android:name=".MainActivity"
+            android:label="MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivityHomeWorkScreen"
+            android:label="Sign In">
+        </activity>
+
+        <activity android:name=".OtherTaskActivity"
+            android:label="Other Tasks">
         </activity>
     </application>
 

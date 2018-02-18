@@ -11,4 +11,7 @@
     <string name="login">Login</string>
     <string name="hello_again">Hello again</string>
     <string name="sign_in_using">Sign in using</string>
+    <string name="password_ahort">password is very short</string>
+    <string name="successfull">Successfull</string>
+    <string name="wrong_login">Wrong login</string>
 </resources>

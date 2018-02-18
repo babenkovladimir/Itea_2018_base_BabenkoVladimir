@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorHint">@color/colorWhite</item>
         <item name="android:shadowColor">@color/colorButtonLogin</item>
+        <item name="android:windowContentOverlay">@null</item>
 
     </style>
 
