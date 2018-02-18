@@ -36,8 +36,9 @@ public class MainActivityHomeWorkScreen extends AppCompatActivity {
 
         tvFogotPassword.setOnClickListener(view -> {
             etLogin.setText("");
-
+            etLogin.setError(null);
             etPassword.setText("");
+            etPassword.setError(null);
         });
 
         btFacebookSignIn.setOnClickListener(
@@ -50,23 +51,26 @@ public class MainActivityHomeWorkScreen extends AppCompatActivity {
         btSignUP.setOnClickListener(
             view -> Toast.makeText(this, "SignUp is pressed", Toast.LENGTH_SHORT).show());
 
-        /*
-        * Email validation
-        *
-        * */
-
         btLogin.setOnClickListener(view -> {
             String email = String.valueOf(etLogin.getText());
             String password = String.valueOf(etPassword.getText());
+            boolean isPasswordValid = false;
+            boolean isEmailValid = false;
 
             if (password.length() < 8) {
                 etPassword.setError(getString(R.string.password_ahort));
+            } else {
+                isPasswordValid = true;
             }
 
             if (isValidEmail(email)) {
-                Toast.makeText(this, R.string.successfull, Toast.LENGTH_SHORT).show();
+                isEmailValid = true;
             } else {
-                etLogin.setError(getString(R.string.wrong_login));
+                etLogin.setError("Wrong password");
+            }
+
+            if (isEmailValid && isPasswordValid) {
+                Toast.makeText(this,"Succesful", Toast.LENGTH_SHORT).show();
             }
         });
     }
