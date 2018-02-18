@@ -11,6 +11,10 @@ import java.util.regex.Pattern;
 
 public class MainActivityHomeWorkScreen extends AppCompatActivity {
 
+    private Button btGoogleSignIn, btFacebookSignIn, btLogin, btTerms, btSignUP;
+    private TextView tvFogotPassword;
+    private EditText etLogin, etPassword;
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home_screen);
@@ -19,18 +23,18 @@ public class MainActivityHomeWorkScreen extends AppCompatActivity {
     }
 
     private void setupUI() {
-        Button btGoogleSignIn = (Button) findViewById(R.id.btGoogleSignIn);
-        Button btFacebookSignIn = (Button) findViewById(R.id.btFacebookSignIn);
-        Button btLogin = (Button) findViewById(R.id.btLogin);
-        Button btTerms = (Button) findViewById(R.id.btTerms);
-        Button btSignUP = (Button) findViewById(R.id.btSignUp);
+        btGoogleSignIn = (Button) findViewById(R.id.btGoogleSignIn);
+        btFacebookSignIn = (Button) findViewById(R.id.btFacebookSignIn);
+        btLogin = (Button) findViewById(R.id.btLogin);
+        btTerms = (Button) findViewById(R.id.btTerms);
+        btSignUP = (Button) findViewById(R.id.btSignUp);
 
-        TextView tvFogotPassword = (TextView) findViewById(R.id.tvFogotPassword);
+        tvFogotPassword = (TextView) findViewById(R.id.tvFogotPassword);
 
-        EditText etLogin = (EditText) findViewById(R.id.etLogin);
-        EditText etPassword = (EditText) findViewById(R.id.etPassword);
+        etLogin = (EditText) findViewById(R.id.etLogin);
+        etPassword = (EditText) findViewById(R.id.etPassword);
 
-        tvFogotPassword.setOnClickListener(view-> {
+        tvFogotPassword.setOnClickListener(view -> {
             etLogin.setText("");
 
             etPassword.setText("");
