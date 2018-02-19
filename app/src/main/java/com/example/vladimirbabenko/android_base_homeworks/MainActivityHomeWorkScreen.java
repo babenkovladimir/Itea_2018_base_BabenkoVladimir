@@ -9,8 +9,6 @@ import android.widget.Toast;
 
 public class MainActivityHomeWorkScreen extends AppCompatActivity {
 
-    private Button btGoogleSignIn, btFacebookSignIn, btLogin, btTerms, btSignUP;
-    private TextView tvFogotPassword;
     private EditText etLogin, etPassword;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +19,13 @@ public class MainActivityHomeWorkScreen extends AppCompatActivity {
     }
 
     private void setupUI() {
-        btGoogleSignIn = (Button) findViewById(R.id.btGoogleSignIn);
-        btFacebookSignIn = (Button) findViewById(R.id.btFacebookSignIn);
-        btLogin = (Button) findViewById(R.id.btLogin);
-        btTerms = (Button) findViewById(R.id.btTerms);
-        btSignUP = (Button) findViewById(R.id.btSignUp);
+        Button btGoogleSignIn = (Button) findViewById(R.id.btGoogleSignIn);
+        Button btFacebookSignIn = (Button) findViewById(R.id.btFacebookSignIn);
+        Button btLogin = (Button) findViewById(R.id.btLogin);
+        Button btTerms = (Button) findViewById(R.id.btTerms);
+        Button btSignUP = (Button) findViewById(R.id.btSignUp);
 
-        tvFogotPassword = (TextView) findViewById(R.id.tvFogotPassword);
+        TextView tvFogotPassword = (TextView) findViewById(R.id.tvFogotPassword);
 
         etLogin = (EditText) findViewById(R.id.etLogin);
         etPassword = (EditText) findViewById(R.id.etPassword);
@@ -72,11 +70,7 @@ public class MainActivityHomeWorkScreen extends AppCompatActivity {
     //&& isValidPassword(password)
 
     private boolean isValidEmail(CharSequence email) {
-        if (email == null) {
-            return false;
-        } else {
-            return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
-        }
+        return email != null && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
 }
