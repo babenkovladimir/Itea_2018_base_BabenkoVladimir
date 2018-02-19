@@ -182,7 +182,7 @@
             android:paddingStart="1dp"
             android:text="@string/sign_up"
             android:textColor="@android:color/white"
-            android:textSize="8sp"
+            android:textSize="12sp"
             />
 
         <Button
@@ -196,7 +196,7 @@
             android:paddingStart="1dp"
             android:text="@string/terms"
             android:textColor="@android:color/white"
-            android:textSize="8sp"
+            android:textSize="12sp"
             />
 
     </FrameLayout>
