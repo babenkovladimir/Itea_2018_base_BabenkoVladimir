@@ -6,8 +6,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class MainActivityHomeWorkScreen extends AppCompatActivity {
 
@@ -57,21 +55,17 @@ public class MainActivityHomeWorkScreen extends AppCompatActivity {
             boolean isPasswordValid = false;
             boolean isEmailValid = false;
 
-            if (password.length() < 8) {
-                etPassword.setError(getString(R.string.password_ahort));
-            } else {
-                isPasswordValid = true;
-            }
+            if (password.length() < 8) etPassword.setError(getString(R.string.password_ahort));
+             else isPasswordValid = true;
 
-            if (isValidEmail(email)) {
-                isEmailValid = true;
-            } else {
-                etLogin.setError("Wrong password");
-            }
 
-            if (isEmailValid && isPasswordValid) {
+            if (isValidEmail(email)) isEmailValid = true;
+            else  etLogin.setError("Wrong password");
+
+
+            if (isEmailValid && isPasswordValid)
                 Toast.makeText(this,"Succesful", Toast.LENGTH_SHORT).show();
-            }
+
         });
     }
 
@@ -85,12 +79,4 @@ public class MainActivityHomeWorkScreen extends AppCompatActivity {
         }
     }
 
-    private boolean isValidPassword(CharSequence password) {
-        String regEx = "[0-9]+";
-
-        Pattern pattern = Pattern.compile(regEx);
-        Matcher matcher = pattern.matcher(password);
-
-        return matcher.matches();
-    }
 }
