@@ -14,34 +14,28 @@ import android.widget.LinearLayout;
 import com.example.vladimirbabenko.android_base_homeworks.R;
 import com.squareup.picasso.Picasso;
 
-
 public class DynamicGuiActivity extends AppCompatActivity {
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState,
-                         @Nullable PersistableBundle persistentState) {
+    @Override public void onCreate(@Nullable Bundle savedInstanceState,
+        @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
 
         LinearLayout root = getRootElement(this);
 
-
         setContentView(root, null);
-
-
     }
-
 
     private LinearLayout getRootElement(Context context) {
 
         LinearLayout root = new LinearLayout(context);
-        LinearLayout.LayoutParams rootParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-
+        LinearLayout.LayoutParams rootParams =
+            new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
 
         root.setOrientation(LinearLayout.VERTICAL);
         root.setPaddingRelative(24, 0, 24, 0);
         root.setGravity(Gravity.BOTTOM);
         root.setBackground(getResources().getDrawable(R.drawable.background1));
-
 
         return root;
     }
@@ -52,9 +46,6 @@ public class DynamicGuiActivity extends AppCompatActivity {
         Button btSignUp = new Button(context);
         btSignUp.setId(Integer.parseInt("@+id/btSignUp"));
 
-
-
-
-
+        return flLowerLayout;
     }
 }
