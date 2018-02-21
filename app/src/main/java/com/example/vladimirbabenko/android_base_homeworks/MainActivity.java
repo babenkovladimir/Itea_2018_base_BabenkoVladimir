@@ -18,13 +18,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btShowSignInActivity = (Button) findViewById(R.id.btShowSignInActivity);
-        btShowOtherTasks = (Button) findViewById(R.id.btShowOtherTasks);
-
-        btShowSignInActivity.setOnClickListener(
-            view -> startActivity(new Intent(this, MainActivityHomeWorkScreen.class)));
-
-        btShowOtherTasks.setOnClickListener(
-            view -> startActivity(new Intent(this, OtherTaskActivity.class)));
     }
 }

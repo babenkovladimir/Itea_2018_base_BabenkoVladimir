@@ -4,16 +4,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btShowSignInActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Show Sign In Activity"
-        />
-    <Button
-        android:id="@+id/btShowOtherTasks"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Show other tasks"
-        />
+
 </LinearLayout>
