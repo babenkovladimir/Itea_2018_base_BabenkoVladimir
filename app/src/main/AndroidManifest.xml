@@ -23,11 +23,17 @@
         </activity>
         <activity
             android:name=".MainActivityHomeWorkScreen"
-            android:label="Sign In"></activity>
+            android:label="Sign In" />
+
         <activity
             android:name=".OtherTaskActivity"
-            android:label="Other Tasks"></activity>
-        <activity android:name=".CustomUserInfoActivity"></activity>
+            android:label="Other Tasks" />
+
+        <activity android:name=".CustomUserInfoActivity" />
+
+        <activity android:name=".card.DynamicGuiActivity" />
+
+
     </application>
 
 </manifest>
