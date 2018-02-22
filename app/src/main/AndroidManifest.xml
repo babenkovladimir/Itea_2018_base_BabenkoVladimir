@@ -31,7 +31,9 @@
 
         <activity android:name=".CustomUserInfoActivity" />
 
-        <activity android:name=".card.DynamicGuiActivity" />
+        <activity android:name=".card.DynamicGuiActivityOld" />
+        <activity android:name=".DynamicGuiActivity" />
+        <activity android:name=".card.MainActivityTest" />
 
 
     </application>
