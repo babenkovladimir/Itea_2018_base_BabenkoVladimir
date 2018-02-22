@@ -14,7 +14,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
 public class DynamicGuiActivity extends AppCompatActivity {
 
     @Override
@@ -23,6 +22,7 @@ public class DynamicGuiActivity extends AppCompatActivity {
 
         LinearLayout root = getRootElement(this);
 
+        root.addView(getUpperLayout(this));
         root.addView(getMiddleLayout(this));
         root.addView(getLowerLayout(this));
         setContentView(root);
@@ -50,7 +50,6 @@ public class DynamicGuiActivity extends AppCompatActivity {
 
         LinearLayout.LayoutParams middleLayoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        middleLayoutParams.weight = 12;
         middleLayoutParams.bottomMargin = 36;
 
         LinearLayout middleLayout = new LinearLayout(context);
@@ -62,7 +61,9 @@ public class DynamicGuiActivity extends AppCompatActivity {
         LinearLayout.LayoutParams orParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 12f);
         orParams.bottomMargin = 5;
 
+
         LinearLayout orLayout = new LinearLayout(context);
+        orLayout.setBaselineAligned(true);
         orLayout.setLayoutParams(orParams);
 //        orLayout.setOrientation(LinearLayout.HORIZONTAL);
 
@@ -71,9 +72,8 @@ public class DynamicGuiActivity extends AppCompatActivity {
         View leftView = new View(context); // LeftView
         leftView.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
 
-
         LinearLayout.LayoutParams leftViewParams = new LinearLayout.LayoutParams(0, 1, 5f);
-
+        leftViewParams.gravity=Gravity.CENTER;
         leftView.setLayoutParams(leftViewParams);
         //----------------------------------------------------
 
@@ -82,12 +82,14 @@ public class DynamicGuiActivity extends AppCompatActivity {
 
 
         LinearLayout.LayoutParams rightViewParams = new LinearLayout.LayoutParams(0, 1, 5f);
-        rightViewParams.gravity= Gravity.CENTER;
+        rightViewParams.gravity = Gravity.CENTER;
         rightView.setLayoutParams(rightViewParams);
         //----------------------------------------------------
+
         TextView orTextView = new TextView(context); // TextView
-        LinearLayout.LayoutParams orTextViewParams = (LinearLayout.LayoutParams) orTextView.getLayoutParams();
-        //orTextViewParams.gravity = Gravity.CENTER;
+
+        LinearLayout.LayoutParams orTextViewParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, 2f);
+        orTextView.setLayoutParams(orTextViewParams);
 
         orTextView.setText("OR");
         orTextView.setTextColor(ContextCompat.getColor(this, R.color.colorWhite));
@@ -96,7 +98,7 @@ public class DynamicGuiActivity extends AppCompatActivity {
 
         orLayout.addView(leftView);
         orLayout.addView(orTextView);
-        orLayout.addView(rightView);
+        orLayout.addView(rightView); // add layouts to orLayout
         //----------------------------------------------------
 
 
@@ -140,5 +142,32 @@ public class DynamicGuiActivity extends AppCompatActivity {
         flLowerLayout.addView(btTerms, rightButtonParams);// Params in void addView
 
         return flLowerLayout;
+    }
+
+    private LinearLayout getUpperLayout(Context context) {
+        LinearLayout.LayoutParams upperLayoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        upperLayoutParams.bottomMargin=20;
+
+
+
+        LinearLayout upperLayout = new LinearLayout(context);
+        upperLayout.setOrientation(LinearLayout.VERTICAL);
+        upperLayout.setLayoutParams(upperLayoutParams);
+
+        //---------------------------------------------
+        TextView tvHelloAgain = new TextView(context);
+
+        LinearLayout.LayoutParams tvHelloAgainParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tvHelloAgainParams.gravity=Gravity.CENTER;
+
+        tvHelloAgain.setLayoutParams(tvHelloAgainParams);
+        tvHelloAgain.setText("Hello again");
+        tvHelloAgain.setTextSize(20);
+        tvHelloAgain.setTextColor(ContextCompat.getColor(context, R.color.colorWhite));
+        //tvHelloAgain.setGravity(Gravity.CENTER);
+
+
+        upperLayout.addView(tvHelloAgain);
+        return upperLayout;
     }
 }
