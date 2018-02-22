@@ -73,7 +73,7 @@ public class DynamicGuiActivity extends AppCompatActivity {
         leftView.setBackgroundColor(ContextCompat.getColor(context, R.color.colorWhite));
 
         LinearLayout.LayoutParams leftViewParams = new LinearLayout.LayoutParams(0, 1, 5f);
-        leftViewParams.gravity=Gravity.CENTER;
+        leftViewParams.gravity = Gravity.CENTER;
         leftView.setLayoutParams(leftViewParams);
         //----------------------------------------------------
 
@@ -131,7 +131,7 @@ public class DynamicGuiActivity extends AppCompatActivity {
 
         Button btTerms = new Button(context);
         btTerms.setLayoutParams(rightButtonParams);
-        btTerms.setText("Terms");
+        btTerms.setText(R.string.trms);
         btTerms.setTextSize(14);
         btTerms.setGravity(Gravity.END);
         btTerms.setTextColor(Color.WHITE);
@@ -145,9 +145,8 @@ public class DynamicGuiActivity extends AppCompatActivity {
     }
 
     private LinearLayout getUpperLayout(Context context) {
-        LinearLayout.LayoutParams upperLayoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        upperLayoutParams.bottomMargin=20;
-
+        LinearLayout.LayoutParams upperLayoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        upperLayoutParams.bottomMargin = 20;
 
 
         LinearLayout upperLayout = new LinearLayout(context);
@@ -155,19 +154,49 @@ public class DynamicGuiActivity extends AppCompatActivity {
         upperLayout.setLayoutParams(upperLayoutParams);
 
         //---------------------------------------------
-        TextView tvHelloAgain = new TextView(context);
+        TextView tvHelloAgain = new TextView(context);  // TextView Hellow againe
 
         LinearLayout.LayoutParams tvHelloAgainParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        tvHelloAgainParams.gravity=Gravity.CENTER;
+        tvHelloAgainParams.gravity = Gravity.CENTER;
 
         tvHelloAgain.setLayoutParams(tvHelloAgainParams);
-        tvHelloAgain.setText("Hello again");
+        tvHelloAgain.setText(R.string.hellow_agein);
         tvHelloAgain.setTextSize(20);
         tvHelloAgain.setTextColor(ContextCompat.getColor(context, R.color.colorWhite));
-        //tvHelloAgain.setGravity(Gravity.CENTER);
+
+        //---------------------------------------------
+        TextView tvSignUpBy = new TextView(context);  // TextView signUoBy
+
+        LinearLayout.LayoutParams tvSignUpByParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tvSignUpByParams.gravity = Gravity.START;
+
+        tvSignUpBy.setLayoutParams(tvSignUpByParams);
+        tvSignUpBy.setText(R.string.sign_in_using);
+        tvSignUpBy.setTextSize(14);
+        tvSignUpBy.setTextColor(ContextCompat.getColor(context, R.color.colorWhite));
+        tvSignUpBy.setGravity(Gravity.START);
+
+        //------------------LinearLayout Sign_In_Buttons
+
+        LinearLayout.LayoutParams llSignInButtonsParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 11f);
+
+        LinearLayout llSignInButtons = new LinearLayout(context);
+        llSignInButtonsParams.weight = 11;
+        llSignInButtonsParams.topMargin = 5;
+        llSignInButtons.setLayoutParams(llSignInButtonsParams);
+
+        Button btGoogleSignIn = new Button(context);
+        Button btFacebookSignIn = new Button(context);
 
 
+        llSignInButtons.addView(btGoogleSignIn);
+        llSignInButtons.addView(btFacebookSignIn);
+        //------------------------------------------------
+
+
+        upperLayout.addView(llSignInButtons);
         upperLayout.addView(tvHelloAgain);
+        upperLayout.addView(tvSignUpBy);
         return upperLayout;
     }
 }
