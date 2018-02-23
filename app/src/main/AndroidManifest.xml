@@ -24,18 +24,15 @@
         <activity
             android:name=".MainActivityHomeWorkScreen"
             android:label="Sign In" />
-
         <activity
             android:name=".OtherTaskActivity"
             android:label="Other Tasks" />
-
         <activity android:name=".CustomUserInfoActivity" />
-
         <activity android:name=".card.DynamicGuiActivityOld" />
         <activity android:name=".DynamicGuiActivity" />
         <activity android:name=".card.MainActivityTest" />
-
-
+        <activity android:name=".lesson4.ColorPickerRezultActivity" />
+        <activity android:name=".lesson4.ColorPickerActivity"></activity>
     </application>
 
 </manifest>
