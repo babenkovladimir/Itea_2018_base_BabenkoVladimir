@@ -8,31 +8,48 @@
         android:id="@+id/btShowSignInActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show Sign In Activity" />
+        android:text="@string/show_sign_in_activity" />
 
     <Button
         android:id="@+id/btShowOtherTasks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show other tasks" />
+        android:text="@string/show_other_tasks" />
 
     <TextView
-        android:textColor="@android:color/black"
-        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/lesson_3_homework"/>
+        android:text="@string/lesson_3_homework"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/btCustomUserView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show other tasks" />
+        android:text="@string/show_other_tasks" />
 
     <Button
         android:id="@+id/btDynamicGui"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show dynamic GUI" />
+        android:text="@string/show_dynamic_gui" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/lesson_4_homework"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btColorPicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/color_picker_task"
+        android:textColor="@android:color/black" />
+
+
 </LinearLayout>

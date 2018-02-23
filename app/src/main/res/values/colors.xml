@@ -10,4 +10,12 @@
     <color name="colorGoogleRed">#db3236</color>
     <color name="ColorPink">#fc46aa</color>
 
+
+    <color name="ColorPickerRed">#ff000d</color>
+    <color name="ColorPickerGreen">#64dd17</color>
+    <color name="ColorPickerBlue">#536dfe</color>
+
+
+
+
 </resources>

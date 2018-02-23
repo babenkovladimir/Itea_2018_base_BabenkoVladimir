@@ -19,4 +19,16 @@
     <string name="lesson_3_homework">lesson 3 homeWork</string>
     <string name="trms">Terms</string>
     <string name="hellow_agein">Hello again</string>
+    <string name="lesson_4_homework">lesson 4 homeWork</string>
+    <string name="show_dynamic_gui">Show dynamic GUI</string>
+    <string name="show_other_tasks">Show other tasks</string>
+    <string name="show_sign_in_activity">Show Sign In Activity</string>
+    <string name="selected_color">selected color</string>
+    <string name="r">R</string>
+    <string name="g">G</string>
+    <string name="b">B</string>
+    <string name="_128">128</string>
+
+    <string name="open_color_picker">Open color picker</string>
+    <string name="color_picker_task">color picker task</string>
 </resources>
