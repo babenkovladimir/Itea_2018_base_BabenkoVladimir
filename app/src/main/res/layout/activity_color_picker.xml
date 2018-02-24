@@ -3,10 +3,226 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/ivRezultView"
+        android:layout_width="300dp"
+        android:layout_height="160dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="6dp"
+        android:contentDescription="@string/selected_color"
+        android:src="#808080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivRezultView"
+        >
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/r"
+            android:textColor="@color/ColorPickerRed"
+            android:textSize="24sp"
+            />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/g"
+            android:textColor="@color/ColorPickerGreen"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/b"
+            android:textColor="@color/ColorPickerBlue"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:id="@+id/tvRedRezult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/_128"
+            android:textColor="@color/ColorPickerRed"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:id="@+id/tvGreenRezult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/_128"
+            android:textColor="@color/ColorPickerGreen"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:id="@+id/tvBlueRezult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/_128"
+            android:textColor="@color/ColorPickerBlue"
+            android:textSize="24sp"
+            />
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/glSeekBarLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:columnCount="3"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gridLayout"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/r"
+            android:textColor="@color/ColorPickerRed"
+            android:textSize="24sp"
+            />
+        <SeekBar
+            android:id="@+id/sbRed"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="10"
+            android:layout_gravity="center"
+            android:max="255"
+            android:min="0"
+            android:progress="128"
+
+            />
+        <TextView
+            android:id="@+id/tvSeekBarRedRezult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/_128"
+            android:textColor="@color/ColorPickerRed"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/g"
+            android:textColor="@color/ColorPickerGreen"
+            android:textSize="24sp"
+            />
+        <SeekBar
+            android:id="@+id/sbGreen"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="10"
+            android:layout_gravity="center"
+            android:max="255"
+            android:min="0"
+            android:progress="128"
+
+            />
+        <TextView
+            android:id="@+id/tvSeekBarGreenRezult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/_128"
+            android:textColor="@color/ColorPickerGreen"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/b"
+            android:textColor="@color/ColorPickerBlue"
+            android:textSize="24sp"
+            />
+
+        <SeekBar
+            android:id="@+id/sbBlue"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="10"
+            android:layout_gravity="center"
+            android:max="255"
+            android:min="0"
+            android:progress="128"
+
+            />
+        <TextView
+            android:id="@+id/tvSeekBarBlueRezult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:text="@string/_128"
+            android:textColor="@color/ColorPickerRed"
+            android:textSize="24sp"
+            />
 
 
+    </GridLayout>
 
+    <Button
+        android:id="@+id/btnSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="208dp"
+        android:text="Select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+        />
 
 
 </android.support.constraint.ConstraintLayout>
