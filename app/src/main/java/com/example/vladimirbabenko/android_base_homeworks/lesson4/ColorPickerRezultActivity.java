@@ -1,22 +1,28 @@
 package com.example.vladimirbabenko.android_base_homeworks.lesson4;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.example.vladimirbabenko.android_base_homeworks.R;
 
 public class ColorPickerRezultActivity extends AppCompatActivity {
 
     private TextView tvRedRezult, tvGreenRezult, tvBlueRezult;
+    private ImageView ivRezultViewRez;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_picker_rezult);
 
         setupUI();
+        setupColor(128,128,128);
     }
 
     private void setupUI() {
@@ -24,9 +30,54 @@ public class ColorPickerRezultActivity extends AppCompatActivity {
         tvRedRezult = (TextView) findViewById(R.id.tvRedRezult);
         tvGreenRezult = (TextView) findViewById(R.id.tvGreenRezult);
         tvBlueRezult = (TextView) findViewById(R.id.tvBlueRezult);
+        ivRezultViewRez = (ImageView) findViewById(R.id.ivRezultViewRez);
 
         Button btnOpenColorPicker = findViewById(R.id.btnOpenColorPicker);
-        btnOpenColorPicker.setOnClickListener(
-            v -> startActivity(new Intent(getApplicationContext(), ColorPickerActivity.class)));
+        btnOpenColorPicker.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ColorPickerActivity.class);
+                startActivityForResult(intent, Lesson4CodeList.COLOR_PICKER_REQUEST_CODE);
+            }
+        });
+    }
+
+    @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        if (requestCode == Lesson4CodeList.COLOR_PICKER_REQUEST_CODE
+            && resultCode == RESULT_OK
+            && data != null) {
+
+            //---------------Get information by simple extra
+            //int r = data.getIntExtra("r",10 );
+            //int g = data.getIntExtra("g",10 );
+            //int b = data.getIntExtra("b",10 );
+            //tvRedRezult.setText(String.valueOf(r));
+            //tvGreenRezult.setText(String.valueOf(g));
+            //tvBlueRezult.setText(String.valueOf(b));
+            //setupColor(r,g,b);
+
+            //----------------Get information by bundle and parcelable object
+            Bundle bundle = data.getBundleExtra(Lesson4CodeList.COLOR_BUNDLE_KEY);
+
+            try {
+                ColorObject colorObject =
+                    (ColorObject) bundle.get(Lesson4CodeList.COLOR_OBJECT_KEY);
+
+                int r = colorObject.getRed();
+                int g = colorObject.getGreen();
+                int b = colorObject.getBlue();
+
+                tvRedRezult.setText(String.valueOf(r));
+                tvGreenRezult.setText(String.valueOf(g));
+                tvBlueRezult.setText(String.valueOf(b));
+                setupColor(r, g, b);
+            } catch (Exception ex) {
+                Toast.makeText(this, "error!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void setupColor(int r, int g, int b) {
+        ivRezultViewRez.setBackgroundColor(Color.rgb(r, g, b));
     }
 }
