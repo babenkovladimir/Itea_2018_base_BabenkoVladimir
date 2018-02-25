@@ -35,7 +35,13 @@ public class ColorPickerRezultActivity extends AppCompatActivity {
         Button btnOpenColorPicker = findViewById(R.id.btnOpenColorPicker);
         btnOpenColorPicker.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ColorPickerActivity.class);
+                //
+                //Intent intent = new Intent(getApplicationContext(), ColorPickerActivity.class);
+
+
+                //implicit call
+                Intent intent = new Intent("itea.base.lesson4.colorPicker");
+
                 startActivityForResult(intent, Lesson4CodeList.COLOR_PICKER_REQUEST_CODE);
             }
         });
