@@ -6,8 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-import com.example.vladimirbabenko.android_base_homeworks.lesson4.ColorPickerActivity;
-import com.example.vladimirbabenko.android_base_homeworks.lesson4.ColorPickerRezultActivity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 
 
 public class MainActivity extends AppCompatActivity {

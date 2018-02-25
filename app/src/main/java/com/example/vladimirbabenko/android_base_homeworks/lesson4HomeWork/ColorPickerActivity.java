@@ -1,15 +1,11 @@
-package com.example.vladimirbabenko.android_base_homeworks.lesson4;
+package com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Parcel;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;

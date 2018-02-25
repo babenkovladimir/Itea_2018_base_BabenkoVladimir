@@ -1,4 +1,4 @@
-package com.example.vladimirbabenko.android_base_homeworks.lesson4;
+package com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork;
 
 import android.os.Parcel;
 import android.os.Parcelable;

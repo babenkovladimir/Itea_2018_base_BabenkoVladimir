@@ -1,4 +1,4 @@
-package com.example.vladimirbabenko.android_base_homeworks.lesson4;
+package com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import com.example.vladimirbabenko.android_base_homeworks.R;
 
 public class ColorPickerRezultActivity extends AppCompatActivity {
