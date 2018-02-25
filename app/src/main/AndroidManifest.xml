@@ -31,8 +31,10 @@
         <activity android:name=".card.DynamicGuiActivityOld" />
         <activity android:name=".DynamicGuiActivity" />
         <activity android:name=".card.MainActivityTest" />
-        <activity android:name=".lesson4.ColorPickerRezultActivity" />
-        <activity android:name=".lesson4.ColorPickerActivity"></activity>
+        <activity android:name=".lesson4.ColorPickerRezultActivity"
+            android:label="Color Picker Rezult"/>
+        <activity android:name=".lesson4.ColorPickerActivity"
+            android:label="Color Picker"></activity>
     </application>
 
 </manifest>

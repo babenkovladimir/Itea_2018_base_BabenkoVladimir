@@ -22,7 +22,7 @@ public class ColorPickerRezultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_color_picker_rezult);
 
         setupUI();
-        setupColor(128,128,128);
+        setupColor(128, 128, 128);
     }
 
     private void setupUI() {
@@ -42,27 +42,18 @@ public class ColorPickerRezultActivity extends AppCompatActivity {
     }
 
     @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //----------------Get information by bundle and parcelable object
+        parceByBundle(requestCode, resultCode, data);
+        //----------------Get information by simple extras
+        //parceBySimpleExtars(requestCode, resultCode, data);
+    }
 
-        if (requestCode == Lesson4CodeList.COLOR_PICKER_REQUEST_CODE
-            && resultCode == RESULT_OK
-            && data != null) {
-
-            //---------------Get information by simple extra
-            //int r = data.getIntExtra("r",10 );
-            //int g = data.getIntExtra("g",10 );
-            //int b = data.getIntExtra("b",10 );
-            //tvRedRezult.setText(String.valueOf(r));
-            //tvGreenRezult.setText(String.valueOf(g));
-            //tvBlueRezult.setText(String.valueOf(b));
-            //setupColor(r,g,b);
-
-            //----------------Get information by bundle and parcelable object
+    private void parceByBundle(int requestCode, int resultCode, Intent data) {
+        if (requestCode == Lesson4CodeList.COLOR_PICKER_REQUEST_CODE && resultCode == RESULT_OK) {
             Bundle bundle = data.getBundleExtra(Lesson4CodeList.COLOR_BUNDLE_KEY);
-
-            try {
+            if(bundle!=null && bundle.containsKey(Lesson4CodeList.COLOR_OBJECT_KEY)){
                 ColorObject colorObject =
                     (ColorObject) bundle.get(Lesson4CodeList.COLOR_OBJECT_KEY);
-
                 int r = colorObject.getRed();
                 int g = colorObject.getGreen();
                 int b = colorObject.getBlue();
@@ -71,10 +62,22 @@ public class ColorPickerRezultActivity extends AppCompatActivity {
                 tvGreenRezult.setText(String.valueOf(g));
                 tvBlueRezult.setText(String.valueOf(b));
                 setupColor(r, g, b);
-            } catch (Exception ex) {
-                Toast.makeText(this, "error!", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+    private void parceBySimpleExtars(int requestCode, int resultCode, Intent data) {
+        int r=0;
+        int g=0;
+        int b=0;
+
+        if (requestCode == Lesson4CodeList.COLOR_PICKER_REQUEST_CODE && resultCode == RESULT_OK && data!=null) {
+            Bundle extras = data.getExtras();
+            if (extras.containsKey("r")) r=extras.getInt("r");
+            if (extras.containsKey("g")) g=extras.getInt("g");
+            if (extras.containsKey("b")) b=extras.getInt("b");
+        }
+        setupColor(r,g,b);
     }
 
     private void setupColor(int r, int g, int b) {
