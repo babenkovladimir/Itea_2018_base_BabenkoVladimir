@@ -16,25 +16,36 @@
             android:name=".MainActivity"
             android:label="MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivityHomeWorkScreen"
-            android:label="Sign In" />
+            android:label="Sign In"/>
         <activity
             android:name=".OtherTaskActivity"
-            android:label="Other Tasks" />
-        <activity android:name=".CustomUserInfoActivity" />
-        <activity android:name=".card.DynamicGuiActivityOld" />
-        <activity android:name=".DynamicGuiActivity" />
-        <activity android:name=".card.MainActivityTest" />
-        <activity android:name=".lesson4.ColorPickerRezultActivity"
-            android:label="Color Picker Rezult"/>
-        <activity android:name=".lesson4.ColorPickerActivity"
-            android:label="Color Picker"></activity>
+            android:label="Other Tasks"/>
+        <activity android:name=".CustomUserInfoActivity"/>
+        <activity android:name=".card.DynamicGuiActivityOld"/>
+        <activity android:name=".DynamicGuiActivity"/>
+        <activity android:name=".card.MainActivityTest"/>
+        <activity
+            android:name=".lesson4.ColorPickerRezultActivity"
+            android:label="Color Picker Rezult">
+
+        </activity>
+        <activity
+            android:name=".lesson4.ColorPickerActivity"
+            android:label="Color Picker">
+            <intent-filter>
+                <action android:name="itea.base.lesson4.colorPicker"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+
+        </activity>
     </application>
 
 </manifest>
