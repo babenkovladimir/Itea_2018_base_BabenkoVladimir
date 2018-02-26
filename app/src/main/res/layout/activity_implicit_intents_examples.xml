@@ -8,20 +8,20 @@
         android:id="@+id/btAlarmClock"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="create alarm"
         />
-    <!--<Button-->
-        <!--android:id="@+id/button"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Button"-->
-        <!--/>-->
-    <!--<Button-->
-        <!--android:id="@+id/button"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Button"-->
-        <!--/>-->
+    <Button
+        android:id="@+id/btSetTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="set timer"
+        />
+    <Button
+        android:id="@+id/btShowAllAlarms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show all alarms"
+        />
     <!--<Button-->
         <!--android:id="@+id/button"-->
         <!--android:layout_width="match_parent"-->

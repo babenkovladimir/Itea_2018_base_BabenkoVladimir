@@ -6,15 +6,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.IntentExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
-
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btShowSignInActivity, btShowOtherTasks, btCustomUserViewActivity, btDynamicGui, btColorPicker;
+    private Button btShowSignInActivity, btShowOtherTasks, btCustomUserViewActivity, btDynamicGui,
+        btColorPicker, btImplicitCalls;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         btCustomUserViewActivity = (Button) findViewById(R.id.btCustomUserView);
         btDynamicGui = (Button) findViewById(R.id.btDynamicGui);
         btColorPicker = (Button) findViewById(R.id.btColorPicker);
-
+        btImplicitCalls = (Button) findViewById(R.id.btImplicitCalls);
 
         btShowSignInActivity.setOnClickListener(
             view -> startActivity(new Intent(this, MainActivityHomeWorkScreen.class)));
@@ -34,9 +34,13 @@ public class MainActivity extends AppCompatActivity {
         btCustomUserViewActivity.setOnClickListener(
             view -> startActivity(new Intent(this, CustomUserInfoActivity.class)));
 
-        btDynamicGui.setOnClickListener(view -> startActivity(new Intent(this, DynamicGuiActivity.class)));
+        btDynamicGui.setOnClickListener(
+            view -> startActivity(new Intent(this, DynamicGuiActivity.class)));
 
-        btColorPicker.setOnClickListener(view -> startActivity(new Intent(this, ColorPickerRezultActivity.class)));
+        btColorPicker.setOnClickListener(
+            view -> startActivity(new Intent(this, ColorPickerRezultActivity.class)));
 
+        btImplicitCalls.setOnClickListener(view -> startActivity(
+            new Intent(getApplicationContext(), IntentExampleActivity.class)));
     }
 }
