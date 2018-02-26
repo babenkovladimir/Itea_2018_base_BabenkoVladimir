@@ -3,6 +3,7 @@
     package="com.example.vladimirbabenko.android_base_homeworks">
 
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="Android.Manifest.Permission.CallPhone" />
 
     <application
         android:allowBackup="true"

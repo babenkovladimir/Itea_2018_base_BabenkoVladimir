@@ -22,22 +22,34 @@
         android:layout_height="wrap_content"
         android:text="Show all alarms"
         />
-    <!--<Button-->
-        <!--android:id="@+id/button"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Button"-->
-        <!--/>-->
-    <!--<Button-->
-        <!--android:id="@+id/button"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Button"-->
-        <!--/>-->
-    <!--<Button-->
-        <!--android:id="@+id/button"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Button"-->
-        <!--/>-->
+    <Button
+        android:id="@+id/btAddCalendarEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add calendar event"
+        />
+    <Button
+        android:id="@+id/btCalendarTestEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calendar Test Event"
+        />
+    <Button
+        android:id="@+id/btOpenSomeSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="open some settings"
+        />
+    <Button
+        android:id="@+id/btInitiateAPhoneCall_ActionDial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Action Dial"
+        />
+    <Button
+        android:id="@+id/btInitiateAPhoneCall_ActionCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Action call"
+        />
 </LinearLayout>
