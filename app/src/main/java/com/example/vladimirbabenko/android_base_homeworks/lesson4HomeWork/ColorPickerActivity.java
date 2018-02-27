@@ -12,7 +12,8 @@ import android.widget.TextView;
 
 import com.example.vladimirbabenko.android_base_homeworks.R;
 
-public class ColorPickerActivity extends AppCompatActivity {
+public class ColorPickerActivity extends AppCompatActivity
+    implements SeekBar.OnSeekBarChangeListener {
 
     private TextView tvRedRezult, tvGreenRezult, tvBlueRezult;
     private SeekBar sbRed, sbGreen, sbBlue;
@@ -27,7 +28,7 @@ public class ColorPickerActivity extends AppCompatActivity {
         setupUI();
         setupListners();
         setupSeekBarValues();
-        setupColor(128,128,128);
+        setupColor(128, 128, 128);
     }
 
     private void setupUI() {
@@ -50,54 +51,9 @@ public class ColorPickerActivity extends AppCompatActivity {
     }
 
     private void setupListners() {
-        sbRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                redProgress = progress;
-                tvRedRezult.setText(String.valueOf(redProgress));
-                setupColor();
-            }
-
-            @Override public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-        sbGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                greenProgress = progress;
-                tvGreenRezult.setText(String.valueOf(greenProgress));
-                setupColor();
-            }
-
-            @Override public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-        sbBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                blueProgress = progress;
-                tvBlueRezult.setText(String.valueOf(blueProgress));
-                setupColor();
-            }
-
-            @Override public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
+        sbRed.setOnSeekBarChangeListener(this);
+        sbGreen.setOnSeekBarChangeListener(this);
+        sbBlue.setOnSeekBarChangeListener(this);
         btSelect.setOnClickListener(v -> {
 
             Intent intent = new Intent();
@@ -129,9 +85,24 @@ public class ColorPickerActivity extends AppCompatActivity {
         ivRezultView.setBackgroundColor(color);
     }
 
-    private void setupColor(int r, int g, int b){
+    private void setupColor(int r, int g, int b) {
         int color = Color.rgb(r, g, b);
         ivRezultView.setBackgroundColor(color);
+    }
 
+    @Override public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        switch (seekBar.getId()) {
+            case R.id.sbRed: redProgress = progress; tvRedRezult.setText(String.valueOf(redProgress)); break;
+            case R.id.sbGreen: greenProgress = progress; tvGreenRezult.setText(String.valueOf(greenProgress)); break;
+            case R.id.sbBlue: blueProgress = progress; tvBlueRezult.setText(String.valueOf(blueProgress)); break;
+            default: break;
+        }
+        setupColor();
+    }
+
+    @Override public void onStartTrackingTouch(SeekBar seekBar) {
+    }
+
+    @Override public void onStopTrackingTouch(SeekBar seekBar) {
     }
 }
