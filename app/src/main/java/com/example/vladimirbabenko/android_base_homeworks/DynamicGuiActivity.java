@@ -102,7 +102,7 @@ public class DynamicGuiActivity extends AppCompatActivity {
         orLayout.addView(leftView, leftViewParams);
         orLayout.addView(orTextView, orTextViewParams);
         orLayout.addView(rightView, rightViewParams); // add layouts to orLayout
-        //----------------------------------------------------
+        //---------------------------------------------------- TextInputLatout for login input
 
         TextInputLayout loginTextInputLayout = new TextInputLayout(context);
         LinearLayout.LayoutParams loginTextInputLayoutParams = new LinearLayout.LayoutParams(
@@ -118,10 +118,28 @@ public class DynamicGuiActivity extends AppCompatActivity {
 
 
         loginTextInputLayout.addView(loginInputEditText, loginInputEditTextParams);
+        //------------------------TextInputLatout for password input
+
+        TextInputLayout passwordTextInputLayout = new TextInputLayout(context);
+        LinearLayout.LayoutParams passwordTextInputLayoutParams = new LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+
+        TextInputEditText passwordInputEditText = new TextInputEditText(context);
+        TextInputLayout.LayoutParams passwordInputEditTextParams = new TextInputLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        passwordInputEditText.setCursorVisible(false);
+        passwordInputEditText.setHint(R.string.password);
+        passwordInputEditText.setTextColor(ContextCompat.getColor(context,R.color.colorWhite));
+
+
+
+
 
 
         middleLayout.addView(orLayout, orParams);
         middleLayout.addView(loginTextInputLayout, loginTextInputLayoutParams);
+        middleLayout.addView(passwordTextInputLayout, passwordInputEditTextParams);
 
         return middleLayout;
     }
