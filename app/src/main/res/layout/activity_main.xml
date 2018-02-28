@@ -64,6 +64,12 @@
         android:text="@string/lesson_5_homework"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
+    <Button
+        android:id="@+id/btArrayAdapterAndLifecycle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/array_adapter_and_lifecle"
+        android:textColor="@android:color/black" />
 
 
 
