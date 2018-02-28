@@ -57,7 +57,13 @@
         android:layout_height="wrap_content"
         android:text="@string/color_picker_task"
         android:textColor="@android:color/black" />
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/lesson_5_homework"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
 
 
 
