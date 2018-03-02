@@ -22,81 +22,39 @@ import java.util.Random;
 
 public class ArrayAdapterExampleActivity extends AppCompatActivity {
     private static String TAG = "tag";
-    //private static String[] countryArray = {
-    //    "Киев", "Харьков", "Львов", "Ужгород", "Тернополь", "Коломия", "Хорватия", "Польша",
-    //    "Америка", "Катя", "Оля", "Петя", "Марина", "Артём", "Киев", "Харьков", "Львов", "Ужгород",
-    //    "Тернополь", "Коломия", "Хорватия", "Польша", "Америка", "Катя", "Оля", "Петя", "Марина",
-    //    "Артём", "Киев", "Харьков", "Львов", "Ужгород", "Тернополь", "Коломия", "Хорватия",
-    //    "Польша", "Америка", "Катя", "Оля", "Петя", "Марина", "Артём", "Киев", "Харьков", "Львов",
-    //    "Ужгород", "Тернополь", "Коломия", "Хорватия", "Польша", "Америка", "Катя", "Оля", "Петя",
-    //    "Марина", "Артём"
-    //};
-
     private static String[] countryArray = {
         "Киев", "Харьков", "Львов", "Ужгород", "Тернополь", "Коломия", "Хорватия", "Польша",
-        "Америка", "Катя"
+        "Америка", "Катя", "Оля", "Петя", "Марина", "Артём", "Киев", "Харьков", "Львов", "Ужгород"
     };
 
-    private static String[] capitalNames = {
-        "Киев-centr", "Харьков-centr", "Львов-centr", "Ужгород-centr", "Тернополь-centr",
-        "Коломия-centr", "Хорватия-centr", "Польша-centr", "Америка-centr", "Катя-centr"
-    };
 
-    private static int[] flags = {
-        R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
-        R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
-        R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
-        R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
-        R.drawable.ic_launcher_background, R.drawable.ic_launcher_background
-    };
 
-    //List<String> countryList;
-    List<Country> listCountry;
+    List<String> countryList;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_array_adapter_example);
         Log.d(TAG, "onCreate: ");
 
-        listCountry = new ArrayList<Country>();
+         countryList = new ArrayList<String>(Arrays.asList(countryArray));
 
-        for (int i = 0; i < countryArray.length; i++) {
-            listCountry.add(new Country(countryArray[i], capitalNames[i], flags[i]));
-        }
+        ArrayAdapter<String> adapter =
+            new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1,
+                countryList);
 
-        // countryList = new ArrayList<String>(Arrays.asList(countryArray));
-
-        //ArrayAdapter<String> adapter =
-        //    new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1,
-        //        countryList);
-        CustomAdapter customAdapter =
-            new CustomAdapter(getApplicationContext(), R.layout.item_layout_custom, listCountry);
         ListView listView = (ListView) findViewById(R.id.lvCountryList);
-        //listView.setAdapter(adapter);
-        listView.setAdapter(customAdapter);
+        listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-
-                Uri uri = Uri.parse("https://ru.wikipedia.org/wiki/" + listCountry.get(position).getCountryCapital());
-                intent.setData(uri);
-                getApplicationContext().startActivity(intent);
-            }
+        Button btAddListItem = (Button) findViewById(R.id.btAddListItem);
+        btAddListItem.setOnClickListener(v -> {
+            countryList.add(String.valueOf(new Random().nextInt(10)));
+            adapter.notifyDataSetChanged();
         });
-
-        //Button btAddListItem = (Button) findViewById(R.id.btAddListItem);
-        //btAddListItem.setOnClickListener(v -> {
-        //    countryList.add(String.valueOf(new Random().nextInt(10)));
-        //    adapter.notifyDataSetChanged();
-        //});
-        //Button btRemoveSomeItem = (Button) findViewById(R.id.btRemoveSomeItem);
-        //btRemoveSomeItem.setOnClickListener(v -> {
-        //    countryList.remove(new Random().nextInt(countryList.size()));
-        //    adapter.notifyDataSetChanged();
-        //});
+        Button btRemoveSomeItem = (Button) findViewById(R.id.btRemoveSomeItem);
+        btRemoveSomeItem.setOnClickListener(v -> {
+            countryList.remove(new Random().nextInt(countryList.size()));
+            adapter.notifyDataSetChanged();
+        });
     }
 
     @Override protected void onStart() {
