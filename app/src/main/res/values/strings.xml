@@ -34,4 +34,5 @@
     <string name="_255">255</string>
     <string name="lesson_5_homework">lesson 5 homeWork</string>
     <string name="array_adapter_and_lifecle">Array adapter and Lifecycle</string>
+    <string name="lesson_6_custom_array_adapter">lesson 6 custom Array Adapter</string>
 </resources>

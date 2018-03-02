@@ -9,11 +9,12 @@ import android.widget.Button;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.IntentExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.ArrayAdapterExampleActivity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson6CalssMaterial.ArrayAdapterCustomActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btShowSignInActivity, btShowOtherTasks, btCustomUserViewActivity, btDynamicGui,
-        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle;
+        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         btColorPicker = (Button) findViewById(R.id.btColorPicker);
         btImplicitCalls = (Button) findViewById(R.id.btImplicitCalls);
         btArrayAdapterAndLifecycle = (Button) findViewById(R.id.btArrayAdapterAndLifecycle);
+        bCustomArrayAdapter = (Button) findViewById(R.id.bCustomArrayAdapter);
 
         btShowSignInActivity.setOnClickListener(
             view -> startActivity(new Intent(this, MainActivityHomeWorkScreen.class)));
@@ -46,5 +48,8 @@ public class MainActivity extends AppCompatActivity {
         btImplicitCalls.setOnClickListener(view -> startActivity(
             new Intent(getApplicationContext(), IntentExampleActivity.class)));
         btArrayAdapterAndLifecycle.setOnClickListener(view -> startActivity(new Intent(this, ArrayAdapterExampleActivity.class)));
+
+        bCustomArrayAdapter.setOnClickListener(view-> startActivity(new Intent(this, ArrayAdapterCustomActivity.class)));
+
     }
 }

@@ -7,27 +7,25 @@
 
     <ImageView
         android:id="@+id/ivImageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        android:background="@color/colorAccent"
-        />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@color/colorAccent" />
 
     <TextView
         android:id="@+id/tvTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Some Text"
-        />
+        android:text="Some Text" />
+
     <Button
+        android:layout_gravity="right"
         android:id="@+id/btButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:text="Some Button"
-        />
+        android:text="WIKI" />
 
 </LinearLayout>

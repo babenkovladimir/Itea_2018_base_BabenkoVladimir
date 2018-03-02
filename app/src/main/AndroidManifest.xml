@@ -37,7 +37,7 @@
         <activity android:name=".card.MainActivityTest" />
         <activity
             android:name=".lesson4HomeWork.ColorPickerRezultActivity"
-            android:label="Color Picker Rezult"></activity>
+            android:label="Color Picker Rezult" />
         <activity
             android:name=".lesson4HomeWork.ColorPickerActivity"
             android:label="Color Picker">
@@ -48,7 +48,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".lesson4ClassMaterial.IntentExampleActivity" />
-        <activity android:name=".lesson5ClassMaterial.ArrayAdapterExampleActivity"></activity>
+        <activity android:name=".lesson5ClassMaterial.ArrayAdapterExampleActivity" />
+        <activity android:name=".lesson6CalssMaterial.ArrayAdapterCustomActivity"></activity>
     </application>
 
 </manifest>
