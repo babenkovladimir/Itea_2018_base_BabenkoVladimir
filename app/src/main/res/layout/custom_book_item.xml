@@ -6,48 +6,66 @@
     android:layout_height="120dp"
     android:layout_margin="5dp"
     android:background="@color/ColorPickerGreen"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
     android:orientation="horizontal"
     android:paddingBottom="5dp"
     android:paddingEnd="10dp"
     android:paddingStart="10dp"
-    android:paddingTop="5dp">
+    android:paddingTop="5dp"
+    >
 
     <ImageView
         android:id="@+id/ivBookLogo"
         android:layout_width="104dp"
         android:layout_height="104dp"
-        tools:background="@drawable/open_book_logo" />
+        android:background="@drawable/open_book_logo"
+        android:clickable="false"
+        />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:orientation="vertical">
+
+        android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:orientation="vertical"
+        >
 
         <TextView
             android:id="@+id/tvNameOfBook"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:clickable="false"
             android:text="name of book"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            />
 
         <TextView
             android:id="@+id/tvAuthorofBook"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:clickable="false"
             android:text="Author"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            />
 
         <RatingBar
+            android:isIndicator="true"
             android:id="@+id/rbRaitingBar"
-            android:clickable="false"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="false"
+            android:contextClickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:numStars="5"
             android:rating="2.5"
-            android:scrollbarSize="5dp" />
-
+            android:scrollbarSize="5dp"
+            />
 
     </LinearLayout>
 

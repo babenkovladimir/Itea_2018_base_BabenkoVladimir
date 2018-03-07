@@ -6,16 +6,21 @@
     android:layout_height="match_parent"
     android:gravity="bottom"
     android:orientation="vertical"
-    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity">
+    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity"
+    >
 
     <ListView
         android:id="@+id/lvBooksList"
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginBottom="5dp" />
+        android:layout_marginBottom="5dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
     <Button
         android:id="@+id/btAddBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="add" />
+        android:text="add"
+        />
 </LinearLayout>

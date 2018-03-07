@@ -10,10 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import com.example.vladimirbabenko.android_base_homeworks.R;
-import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
 public class BookListAdapter extends ArrayAdapter<BookEntity> {
@@ -33,11 +30,20 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
         notifyDataSetChanged();
     }
 
+    public void addBook(BookEntity book) {
+        books.add(book);
+        notifyDataSetChanged();
+    }
+
+    public void removeBook(int position){
+        books.remove(position);
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view =
-            null;//= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_book_item, parent, false);
+        View view = null;//= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_book_item, parent, false);
 
         if (convertView == null) {
             view = LayoutInflater.from(parent.getContext())
@@ -56,7 +62,7 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
         nameOfBook.setText(books.get(position).getNameofBook());
         author.setText(books.get(position).getAuthor());
         ratingBar.setRating(books.get(position).getRate());
-
+        //bookImage.setBackground();
 //        Picasso.with(context)
 //            .load(books.get(position).getImageUrl())
 //            .placeholder(R.drawable.open_book_logo)
@@ -66,4 +72,6 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
 
         return view;
     }
+
+
 }

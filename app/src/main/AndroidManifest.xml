@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.vladimirbabenko.android_base_homeworks">
 
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-    <uses-permission android:name="Android.Manifest.Permission.CallPhone" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="Android.Manifest.Permission.CallPhone"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -20,45 +20,45 @@
             android:name=".MainActivity"
             android:label="MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivityHomeWorkScreen"
-            android:label="Sign In" />
+            android:label="Sign In"/>
         <activity
             android:name=".OtherTaskActivity"
-            android:label="Other Tasks" />
-        <activity android:name=".CustomUserInfoActivity" />
-        <activity android:name=".card.DynamicGuiActivityOld" />
-        <activity android:name=".DynamicGuiActivity" />
-        <activity android:name=".card.MainActivityTest" />
+            android:label="Other Tasks"/>
+        <activity android:name=".CustomUserInfoActivity"/>
+        <activity android:name=".card.DynamicGuiActivityOld"/>
+        <activity android:name=".DynamicGuiActivity"/>
+        <activity android:name=".card.MainActivityTest"/>
         <activity
             android:name=".lesson4HomeWork.ColorPickerRezultActivity"
-            android:label="Color Picker Rezult" />
+            android:label="Color Picker Rezult"/>
         <activity
             android:name=".lesson4HomeWork.ColorPickerActivity"
             android:label="Color Picker">
             <intent-filter>
-                <action android:name="itea.base.lesson4.colorPicker" />
+                <action android:name="itea.base.lesson4.colorPicker"/>
 
-                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".lesson4ClassMaterial.IntentExampleActivity" />
-        <activity android:name=".lesson5ClassMaterial.ArrayAdapterExampleActivity" />
-        <activity android:name=".lesson6CalssMaterial.ArrayAdapterCustomActivity" />
-        <activity android:name=".lesson7_practice.LogoActivity" />
-
+        <activity android:name=".lesson4ClassMaterial.IntentExampleActivity"/>
+        <activity android:name=".lesson5ClassMaterial.ArrayAdapterExampleActivity"/>
+        <activity android:name=".lesson6CalssMaterial.ArrayAdapterCustomActivity"/>
+        <activity android:name=".lesson7_practice.LogoActivity"/>
         <activity
             android:name=".lesson7_practice.BooksListActivity"
-            android:label="Books info list" />
-
+            android:label="Books info list"/>
         <activity
             android:name=".lesson7_practice.AddBookActivity"
-            android:label="Add Book" />
+            android:label="Add Book"/>
+        <activity android:name=".lesson7_practice.BookPreviewActivity">
+        </activity>
     </application>
 
 </manifest>

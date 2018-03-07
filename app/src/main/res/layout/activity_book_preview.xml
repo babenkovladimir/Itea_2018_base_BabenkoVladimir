@@ -5,60 +5,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
     android:orientation="vertical"
-    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.AddBookActivity"
+    android:gravity="bottom"
+    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BookPreviewActivity"
+
     >
+    <include
 
-    <EditText
-        android:id="@+id/etBookName"
+        layout="@layout/custom_book_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Book name"
-        android:textColorHint="@android:color/darker_gray"
         />
 
-    <EditText
-        android:id="@+id/etBookAuthor"
+    <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Book author"
-        android:textColorHint="@android:color/darker_gray"
-        />
-    <RatingBar
-        android:id="@+id/rbBookRate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:max="5"
-        android:rating="2.3"
+        android:text="Description"
+        android:textSize="18sp"
         />
 
-    <EditText
-        android:id="@+id/etBookDescription"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:hint="Description"
-        android:textColorHint="@android:color/darker_gray"
+        android:layout_height="250dp"
+        android:layout_margin="5dp"
+        android:text="Description"
+        android:textSize="18sp"
         />
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
         <Button
-            android:id="@+id/btBackPreview"
+            android:id="@+id/btBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="back"
             />
         <Button
-            android:id="@+id/btSavePreview"
+            android:id="@+id/btShare"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginEnd="16dp"
-            android:text="Save"
+            android:text="Share"
             />
 
     </FrameLayout>

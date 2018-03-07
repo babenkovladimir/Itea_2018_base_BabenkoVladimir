@@ -10,6 +10,7 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.I
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.ArrayAdapterExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson6CalssMaterial.ArrayAdapterCustomActivity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.LogoActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         bCustomArrayAdapter.setOnClickListener(view-> startActivity(new Intent(this, ArrayAdapterCustomActivity.class)));
 
-        btLesson7Practice.setOnClickListener(view-> startActivity(new Intent(this, LogoActivity.class)));
+        btLesson7Practice.setOnClickListener(view-> startActivity(new Intent(this, BooksListActivity.class)));
 
     }
 }
