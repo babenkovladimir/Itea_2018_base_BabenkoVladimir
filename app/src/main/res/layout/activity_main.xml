@@ -4,101 +4,116 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btShowSignInActivity"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/show_sign_in_activity" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btShowOtherTasks"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/show_other_tasks" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/lesson_3_homework"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+            <Button
+                android:id="@+id/btShowSignInActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/show_sign_in_activity" />
 
-    <Button
-        android:id="@+id/btCustomUserView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/show_other_tasks" />
+            <Button
+                android:id="@+id/btShowOtherTasks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/show_other_tasks" />
 
-    <Button
-        android:id="@+id/btDynamicGui"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/show_dynamic_gui" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lesson_3_homework"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/lesson_4_homework"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+            <Button
+                android:id="@+id/btCustomUserView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/show_other_tasks" />
 
-    <Button
-        android:id="@+id/btImplicitCalls"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Implicit calls Examples"
-        android:textColor="@android:color/black" />
+            <Button
+                android:id="@+id/btDynamicGui"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/show_dynamic_gui" />
 
-    <Button
-        android:id="@+id/btColorPicker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/color_picker_task"
-        android:textColor="@android:color/black" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/lesson_5_homework"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-    <Button
-        android:id="@+id/btArrayAdapterAndLifecycle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/array_adapter_and_lifecle"
-        android:textColor="@android:color/black" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/lesson_6_custom_array_adapter"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-    <Button
-        android:id="@+id/bCustomArrayAdapter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/lesson_6_custom_array_adapter"
-        android:textColor="@android:color/black" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Lesson 7 practice"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lesson_4_homework"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/btLesson7Practice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/lesson_6_custom_array_adapter"
-        android:textColor="@android:color/black" />
+            <Button
+                android:id="@+id/btImplicitCalls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Implicit calls Examples"
+                android:textColor="@android:color/black" />
 
+            <Button
+                android:id="@+id/btColorPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/color_picker_task"
+                android:textColor="@android:color/black" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lesson_5_homework"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
 
+            <Button
+                android:id="@+id/btArrayAdapterAndLifecycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/array_adapter_and_lifecle"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lesson_6_custom_array_adapter"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/bCustomArrayAdapter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lesson_6_custom_array_adapter"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lesson_7_practice"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btLesson7Practice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lesson_7_practice"
+                android:textColor="@android:color/black" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
