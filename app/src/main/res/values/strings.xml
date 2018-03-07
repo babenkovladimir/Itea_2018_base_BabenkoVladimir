@@ -14,7 +14,7 @@
     <string name="password_ahort">password is very short</string>
     <string name="successfull">Successfull</string>
     <string name="wrong_login">Wrong login</string>
-    <string name="name">Name</string>
+
     <string name="country">Country</string>
     <string name="lesson_3_homework">lesson 3 homeWork</string>
     <string name="trms">Terms</string>
@@ -35,4 +35,7 @@
     <string name="lesson_5_homework">lesson 5 homeWork</string>
     <string name="array_adapter_and_lifecle">Array adapter and Lifecycle</string>
     <string name="lesson_6_custom_array_adapter">lesson 6 custom Array Adapter</string>
+    <string name="logo_image">Logo image</string>
+    <string name="name">Name</string>
+
 </resources>

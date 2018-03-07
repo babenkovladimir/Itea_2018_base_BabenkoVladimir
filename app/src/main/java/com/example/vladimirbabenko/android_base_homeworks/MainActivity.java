@@ -10,11 +10,12 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.I
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.ArrayAdapterExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson6CalssMaterial.ArrayAdapterCustomActivity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.LogoActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btShowSignInActivity, btShowOtherTasks, btCustomUserViewActivity, btDynamicGui,
-        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter;
+        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter, btLesson7Practice;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         btImplicitCalls = (Button) findViewById(R.id.btImplicitCalls);
         btArrayAdapterAndLifecycle = (Button) findViewById(R.id.btArrayAdapterAndLifecycle);
         bCustomArrayAdapter = (Button) findViewById(R.id.bCustomArrayAdapter);
+        btLesson7Practice = (Button) findViewById(R.id.btLesson7Practice);
 
         btShowSignInActivity.setOnClickListener(
             view -> startActivity(new Intent(this, MainActivityHomeWorkScreen.class)));
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         btArrayAdapterAndLifecycle.setOnClickListener(view -> startActivity(new Intent(this, ArrayAdapterExampleActivity.class)));
 
         bCustomArrayAdapter.setOnClickListener(view-> startActivity(new Intent(this, ArrayAdapterCustomActivity.class)));
+
+        btLesson7Practice.setOnClickListener(view-> startActivity(new Intent(this, LogoActivity.class)));
 
     }
 }
