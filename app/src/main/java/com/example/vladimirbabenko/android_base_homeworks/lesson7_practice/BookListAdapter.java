@@ -12,6 +12,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import com.example.vladimirbabenko.android_base_homeworks.R;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class BookListAdapter extends ArrayAdapter<BookEntity> {
@@ -57,18 +58,16 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
         TextView author = (TextView) view.findViewById(R.id.tvAuthorofBook);
         RatingBar ratingBar = (RatingBar) view.findViewById(R.id.rbRaitingBar);
 
-        // TODO use glide or picass for image
+        Picasso.with(context)
+            .load(books.get(position).getImageUrl())
+            .placeholder(R.drawable.open_book_logo)
+            .error(R.drawable.open_book_logo)
+            .fit()
+            .into(bookImage);
 
         nameOfBook.setText(books.get(position).getNameofBook());
         author.setText(books.get(position).getAuthor());
         ratingBar.setRating(books.get(position).getRate());
-        //bookImage.setBackground();
-        //        Picasso.with(context)
-        //            .load(books.get(position).getImageUrl())
-        //            .placeholder(R.drawable.open_book_logo)
-        //            .error(R.drawable.open_book_logo)
-        //            .centerCrop()
-        //            .into(bookImage);
 
         return view;
     }

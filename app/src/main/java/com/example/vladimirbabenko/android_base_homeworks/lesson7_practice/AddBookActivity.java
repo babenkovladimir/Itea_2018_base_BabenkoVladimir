@@ -39,7 +39,7 @@ public class AddBookActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.btSavePreview:
                 BookEntity
-                    book = new BookEntity(etBookName.getText().toString(), etBookAuthor.getText().toString(), "",
+                    book = new BookEntity(etBookName.getText().toString(), etBookAuthor.getText().toString(), "http://demo.makitweb.com/broken_image/images/noimage.png",
                     rbBookRate.getRating(), etBookDescription.getText().toString());
 
                 Intent intent = new Intent();
