@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="120dp"
     android:layout_margin="5dp"
@@ -21,6 +19,8 @@
         android:layout_height="104dp"
         android:background="@drawable/open_book_logo"
         android:clickable="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         />
 
     <LinearLayout
@@ -39,6 +39,8 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
             android:text="name of book"
             android:textSize="18sp"
             />
@@ -54,7 +56,6 @@
             />
 
         <RatingBar
-            android:isIndicator="true"
             android:id="@+id/rbRaitingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,6 +63,7 @@
             android:contextClickable="false"
             android:focusable="false"
             android:focusableInTouchMode="false"
+            android:isIndicator="true"
             android:numStars="5"
             android:rating="2.5"
             android:scrollbarSize="5dp"

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import com.example.vladimirbabenko.android_base_homeworks.R;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
 import java.util.List;
 
 public class BookListAdapter extends ArrayAdapter<BookEntity> {
@@ -19,7 +20,7 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
     private Context context;
 
     public BookListAdapter(@NonNull Context context, int resource,
-                           @NonNull List<BookEntity> objects) {
+        @NonNull List<BookEntity> objects) {
         super(context, resource, objects);
         this.books = objects;
         this.context = context;
@@ -35,15 +36,14 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
         notifyDataSetChanged();
     }
 
-    public void removeBook(int position){
+    public void removeBook(int position) {
         books.remove(position);
         notifyDataSetChanged();
     }
 
-    @NonNull
-    @Override
+    @NonNull @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view = null;//= LayoutInflater.from(parent.getContext()).inflate(R.layout.custom_book_item, parent, false);
+        View view = null;
 
         if (convertView == null) {
             view = LayoutInflater.from(parent.getContext())
@@ -63,15 +63,17 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
         author.setText(books.get(position).getAuthor());
         ratingBar.setRating(books.get(position).getRate());
         //bookImage.setBackground();
-//        Picasso.with(context)
-//            .load(books.get(position).getImageUrl())
-//            .placeholder(R.drawable.open_book_logo)
-//            .error(R.drawable.open_book_logo)
-//            .centerCrop()
-//            .into(bookImage);
+        //        Picasso.with(context)
+        //            .load(books.get(position).getImageUrl())
+        //            .placeholder(R.drawable.open_book_logo)
+        //            .error(R.drawable.open_book_logo)
+        //            .centerCrop()
+        //            .into(bookImage);
 
         return view;
     }
 
-
+    public BookEntity getBook(int position) {
+        return books.get(position);
+    }
 }

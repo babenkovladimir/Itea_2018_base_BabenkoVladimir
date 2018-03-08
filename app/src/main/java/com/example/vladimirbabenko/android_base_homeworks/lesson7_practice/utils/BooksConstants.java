@@ -7,4 +7,6 @@ package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.util
 public interface BooksConstants {
     int ADD_BOOK_REQUEST_CODE = 123;
     String BOOK_ENTITY_KEY = "BOOK_ENTITY_KEY";
+    String BOOK_ENTITY_KEY_PREVIEW = "BOOK_ENTITY_KEY_PREVIEW";
+
 }

@@ -38,5 +38,7 @@
     <string name="name">Name</string>
     <string name="lesson_7_practice">Lesson 7 practice</string>
     <string name="login">Login</string>
+    <string name="description">Description</string>
+    <string name="book_logo">book logo</string>
 
 </resources>

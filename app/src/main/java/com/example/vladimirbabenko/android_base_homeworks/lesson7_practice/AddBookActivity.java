@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import com.example.vladimirbabenko.android_base_homeworks.R;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
 
 public class AddBookActivity extends AppCompatActivity implements View.OnClickListener {
@@ -37,14 +38,14 @@ public class AddBookActivity extends AppCompatActivity implements View.OnClickLi
                 onBackPressed();
                 break;
             case R.id.btSavePreview:
-                BookEntity book = new BookEntity(etBookName.getText().toString(), etBookAuthor.getText().toString(), "",
+                BookEntity
+                    book = new BookEntity(etBookName.getText().toString(), etBookAuthor.getText().toString(), "",
                     rbBookRate.getRating(), etBookDescription.getText().toString());
 
                 Intent intent = new Intent();
                 intent.putExtra(BooksConstants.BOOK_ENTITY_KEY, book);
                 setResult(RESULT_OK, intent);
                 finish();
-                //TODO save book
                 break;
         }
     }

@@ -3,14 +3,12 @@ package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
 import android.widget.Toast;
 import com.example.vladimirbabenko.android_base_homeworks.R;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
 
 import java.util.ArrayList;
@@ -36,7 +34,7 @@ public class BooksListActivity extends AppCompatActivity {
         ""
     };
     private static String[] bookDescription = {
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a scelerisque purus semper eget. Fermentum posuere urna nec tincidunt praesent. Mi eget mauris pharetra et ultrices neque ornare. Volutpat lacus laoreet non curabitur gravida arcu ac tortor dignissim. Egestas sed sed risus pretium quam. Vitae aliquet nec ullamcorper sit amet risus nullam eget. Fames ac turpis egestas integer eget. Morbi quis commodo odio aenean sed adipiscing diam donec adipiscing. Nibh tortor id aliquet lectus proin nibh nisl. Ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Eros in cursus turpis massa tincidunt dui ut. Etiam non quam lacus suspendisse. Montes nascetur ridiculus mus mauris vitae ultricies. Amet aliquam id diam maecenas ultricies mi. Vitae congue mauris rhoncus aenean vel elit. Posuere sollicitudin aliquam ultrices sagittis orci.",
+        "sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut consequat semper viverra nam",
         "", "", "", "", "", "", "", "", "", "", "", ""
     };
 
@@ -63,6 +61,9 @@ public class BooksListActivity extends AppCompatActivity {
         booksList.setOnItemClickListener((parent, view, position, id) -> {
             Toast.makeText(BooksListActivity.this, "IsPressed lekement number " + position,
                 Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), BookPreviewActivity.class);
+            intent.putExtra(BooksConstants.BOOK_ENTITY_KEY_PREVIEW, ((BookListAdapter) booksList.getAdapter()).getBook(position));
+            startActivity(intent);
         });
 
         booksList.setOnItemLongClickListener((parent, view, position, id) -> {
@@ -75,7 +76,7 @@ public class BooksListActivity extends AppCompatActivity {
     public List<BookEntity> getMockBooks() {
         for (int i = 0; i < AuthtorNames.length; i++) {
             books.add(new BookEntity(AuthtorNames[i], BookNames[i], imageUrls[i], bookRating[i],
-                bookDescription[i]));
+                bookDescription[0]));
         }
         return books;
     }
