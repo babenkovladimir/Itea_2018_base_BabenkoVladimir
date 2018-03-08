@@ -40,5 +40,8 @@
     <string name="login">Login</string>
     <string name="description">Description</string>
     <string name="book_logo">book logo</string>
+    <string name="add">add</string>
+    <string name="signup">SignUp</string>
+    <string name="forgot">forgot</string>
 
 </resources>

@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="bottom"
     android:orientation="vertical"
+    android:layout_margin="8dp"
     tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity"
+    android:weightSum="10"
     >
 
     <ListView
         android:id="@+id/lvBooksList"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:layout_marginBottom="5dp"
         android:focusable="false"
         android:focusableInTouchMode="false"
+        android:layout_weight="9"
         />
     <Button
         android:id="@+id/btAddBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="add"
+        android:text="@string/add"
+        android:layout_weight="1"
+        android:textSize="18sp"
         />
 </LinearLayout>

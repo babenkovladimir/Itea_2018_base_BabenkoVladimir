@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         bCustomArrayAdapter.setOnClickListener(view-> startActivity(new Intent(this, ArrayAdapterCustomActivity.class)));
 
-        btLesson7Practice.setOnClickListener(view-> startActivity(new Intent(this, BooksListActivity.class)));
+        btLesson7Practice.setOnClickListener(view-> startActivity(new Intent(this, LogoActivity.class)));
 
     }
 }

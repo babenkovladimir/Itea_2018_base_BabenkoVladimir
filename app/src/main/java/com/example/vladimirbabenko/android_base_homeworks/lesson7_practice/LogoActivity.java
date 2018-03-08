@@ -38,7 +38,6 @@ public class LogoActivity extends AppCompatActivity {
                     .show();
             }
         });
-
         btForgot.setOnClickListener(
             view -> Toast.makeText(getApplicationContext(), "Forgot is pressed", Toast.LENGTH_SHORT)
                 .show());

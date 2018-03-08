@@ -57,7 +57,8 @@ public class BookPreviewActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void fillForm() {
-        Bundle bundle = getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras(); // Probably needs try/catch
+
         if (bundle != null && bundle.containsKey(BooksConstants.BOOK_ENTITY_KEY_PREVIEW)) {
             book = bundle.getParcelable(BooksConstants.BOOK_ENTITY_KEY_PREVIEW);
             tvBookName.setText(book.getNameofBook());

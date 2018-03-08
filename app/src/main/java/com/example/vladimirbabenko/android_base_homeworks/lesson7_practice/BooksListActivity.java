@@ -17,9 +17,6 @@ import java.util.Random;
 
 public class BooksListActivity extends AppCompatActivity {
 
-    //private final String TAG = this.getClass().getSimpleName();
-    private final String TAG = "TAG";
-
     private static String[] AuthtorNames = {
         "Author1", "Author2", "Author3", "Author4", "Author5", "Author6", "Author7", "Author8",
         "Author9", "Author10", "Author11", "Author12", "Author13"
@@ -59,16 +56,14 @@ public class BooksListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_books_list);
 
-        booksList = (ListView) findViewById(R.id.lvBooksList);
-        btAddBook = (Button) findViewById(R.id.btAddBook);
-        btAddBook.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), AddBookActivity.class);
-            startActivityForResult(intent, BooksConstants.ADD_BOOK_REQUEST_CODE);
-        });
+        setupUI();
+    }
 
+    private void setupUI() {
+        booksList = (ListView) findViewById(R.id.lvBooksList);
         adapter = new BookListAdapter(getApplicationContext(), R.layout.custom_book_item, books);
         booksList.setAdapter(adapter);
-        adapter.setBooks(getMockBooks());
+        adapter.setBooks(getMockBooks());// Use this void in Retrofit or Volley ?
 
         booksList.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(getApplicationContext(), BookPreviewActivity.class);
@@ -76,10 +71,14 @@ public class BooksListActivity extends AppCompatActivity {
                 ((BookListAdapter) booksList.getAdapter()).getBook(position));
             startActivity(intent);
         });
-
         booksList.setOnItemLongClickListener((parent, view, position, id) -> {
             ((BookListAdapter) booksList.getAdapter()).removeBook(position);
             return true;
+        });
+
+        findViewById(R.id.btAddBook).setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), AddBookActivity.class);
+            startActivityForResult(intent, BooksConstants.ADD_BOOK_REQUEST_CODE);
         });
     }
 
@@ -92,9 +91,8 @@ public class BooksListActivity extends AppCompatActivity {
     }
 
     @Override protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Bundle extras = data.getExtras();
-
         if (requestCode == BooksConstants.ADD_BOOK_REQUEST_CODE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
             if (extras.containsKey(BooksConstants.BOOK_ENTITY_KEY)) {
                 ((BookListAdapter) booksList.getAdapter()).addBook(
                     (BookEntity) extras.get(BooksConstants.BOOK_ENTITY_KEY));
