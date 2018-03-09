@@ -8,10 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-public class BookEntity implements Parcelable{
+@AllArgsConstructor @NoArgsConstructor @ToString public class BookEntity implements Parcelable {
 
     private @Getter @Setter String nameOfBook;
     private @Getter @Setter String author;
