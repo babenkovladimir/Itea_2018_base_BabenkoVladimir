@@ -7,32 +7,37 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import android.widget.Toast;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import com.example.vladimirbabenko.android_base_homeworks.R;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
 
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.DataManager;
+import com.example.vladimirbabenko.android_base_homeworks.lesson8.BaseActivity;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class BooksListActivity extends AppCompatActivity {
+public class BooksListActivity extends BaseActivity {
 
     private static List<BookEntity> books = new ArrayList<>();
     private Button btAddBook;
-    private ListView booksList;
+    @BindView(R.id.lvBooksList) ListView booksList;
+    //private ListView booksList;
     private BookListAdapter adapter;
 
-    @Override protected void onCreate(Bundle savedInstanceState) {
+    @Override public void onCreate(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_books_list);//Фича для ButterKnife
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_books_list);
 
+        //ButterKnife.bind(this);
         setupUI();
     }
 
     private void setupUI() {
-        booksList = (ListView) findViewById(R.id.lvBooksList);
+        //booksList = (ListView) findViewById(R.id.lvBooksList);
         adapter = new BookListAdapter(getApplicationContext(), R.layout.custom_book_item, books);
         booksList.setAdapter(adapter);
         adapter.setBooks(getMockBooks());// Use this void in Retrofit or Volley ?
@@ -55,7 +60,7 @@ public class BooksListActivity extends AppCompatActivity {
     }
 
     public List<BookEntity> getMockBooks() {
-      books.addAll(DataManager.getMockData());
+        books.addAll(DataManager.getMockData());
         return books;
     }
 

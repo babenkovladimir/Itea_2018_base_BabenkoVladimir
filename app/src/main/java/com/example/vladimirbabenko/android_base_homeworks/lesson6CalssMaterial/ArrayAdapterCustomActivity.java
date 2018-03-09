@@ -35,7 +35,7 @@ public class ArrayAdapterCustomActivity extends AppCompatActivity {
         setContentView(R.layout.activity_array_adapter_custom);
         listView = (ListView)findViewById(R.id.lvCustomCountryList);
 
-
+ //new CountryLess6().;
 
         countryList=getContries();
         CustomArrayAdapter customAdapter = new CustomArrayAdapter(getApplicationContext(), R.layout.item_layout_custom, countryList);

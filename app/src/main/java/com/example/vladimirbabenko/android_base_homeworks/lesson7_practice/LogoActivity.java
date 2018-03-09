@@ -31,6 +31,8 @@ public class LogoActivity extends AppCompatActivity {
         btForgot = (Button) findViewById(R.id.btForgot);
         btLogin = (Button) findViewById(R.id.btLogin);
 
+        
+
         btSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
