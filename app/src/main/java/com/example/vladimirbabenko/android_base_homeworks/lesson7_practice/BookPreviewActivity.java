@@ -8,52 +8,48 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import com.example.vladimirbabenko.android_base_homeworks.R;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
+import com.example.vladimirbabenko.android_base_homeworks.lesson8.base.BaseActivity;
 import com.squareup.picasso.Picasso;
 
-public class BookPreviewActivity extends AppCompatActivity implements View.OnClickListener {
+public class BookPreviewActivity extends BaseActivity {
 
-    private TextView tvBookName, tvBookAuthor, tvBookDescription;
-    private RatingBar rbBookRate;
-    private ImageView ivBookImage;
+    @BindView(R.id.tvBookDescription) TextView tvBookDescription;
+    @BindView(R.id.customPreview) View includeView;
+    @BindView(R.id.tvNameOfBook) TextView tvBookName;
+
+    @BindView(R.id.tvAuthorOfBook) TextView tvBookAuthor;
+    @BindView(R.id.rbRaitingBar) RatingBar rbBookRate;
+    @BindView(R.id.ivBookLogo) ImageView ivBookImage;
+
     private BookEntity book;
 
-    @Override protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    @Override public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_book_preview);
+        super.onCreate(savedInstanceState);
 
-        setupUI();
+        ButterKnife.bind(includeView);
         fillForm();
     }
 
-    @Override public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btBack:
-                onBackPressed();
-                break;
-            case R.id.btShare:
-                if(book!=null){
-                    Intent shareIntent = new Intent();
-                    shareIntent.setAction(Intent.ACTION_SEND);
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, "Book author - "+book.getAuthor()+ "Name of Book - "+ book.getNameofBook());
-                    shareIntent.setType("text/plain");
-                    startActivity(shareIntent);}
-                break;
-        }
+    @OnClick(R.id.btBack) public void btBackOnClick(View v) {
+        onBackPressed();
     }
 
-    private void setupUI() {
-        findViewById(R.id.btBack).setOnClickListener(this);
-        findViewById(R.id.btShare).setOnClickListener(this);
-
-        View includeView = (View) findViewById(R.id.customPreview);
-        tvBookName = (TextView) includeView.findViewById(R.id.tvNameOfBook);
-        tvBookAuthor = (TextView) includeView.findViewById(R.id.tvAuthorofBook);
-        rbBookRate = (RatingBar) includeView.findViewById(R.id.rbRaitingBar);
-        ivBookImage = (ImageView)includeView.findViewById(R.id.ivBookLogo);
-        tvBookDescription = (TextView) findViewById(R.id.tvBookDescription);
+    @OnClick(R.id.btShare) public void btShareClick() {
+        if (book != null) {
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_TEXT,
+                "Book author - " + book.getAuthor() + "Name of Book - " + book.getNameOfBook());
+            shareIntent.setType("text/plain");
+            startActivity(shareIntent);
+        }
     }
 
     private void fillForm() {
@@ -61,7 +57,7 @@ public class BookPreviewActivity extends AppCompatActivity implements View.OnCli
 
         if (bundle != null && bundle.containsKey(BooksConstants.BOOK_ENTITY_KEY_PREVIEW)) {
             book = bundle.getParcelable(BooksConstants.BOOK_ENTITY_KEY_PREVIEW);
-            tvBookName.setText(book.getNameofBook());
+            tvBookName.setText(book.getNameOfBook());
             tvBookAuthor.setText(book.getAuthor());
             tvBookDescription.setText(book.getDescription());
             rbBookRate.setRating(book.getRate());
@@ -73,5 +69,4 @@ public class BookPreviewActivity extends AppCompatActivity implements View.OnCli
                 .into(ivBookImage);
         }
     }
-
 }
