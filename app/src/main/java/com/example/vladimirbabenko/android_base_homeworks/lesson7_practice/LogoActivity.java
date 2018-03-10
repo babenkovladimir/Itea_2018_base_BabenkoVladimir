@@ -2,47 +2,33 @@ package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
+import butterknife.BindView;
+import butterknife.OnClick;
+import butterknife.OnTextChanged;
 import com.example.vladimirbabenko.android_base_homeworks.R;
+import com.example.vladimirbabenko.android_base_homeworks.lesson8.base.BaseActivity;
 
-public class LogoActivity extends AppCompatActivity {
+public class LogoActivity extends BaseActivity {
 
-    private EditText etName, etPassword;
-    private Button btSignUp, btForgot, btLogin;
+    @BindView(R.id.etName) EditText etName;
+    @BindView(R.id.etPassword) EditText etPassword;
+    @BindView(R.id.btSignUp) Button btSignUp;
+    @BindView(R.id.btForgot) Button btForgot;
+    @BindView(R.id.btLogin) Button btLogin;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    private Boolean someError = true;
+
+    @Override public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_logo);
-
-        setupUi();
+        super.onCreate(savedInstanceState);
     }
 
     private void setupUi() {
-        etName = (EditText) findViewById(R.id.etName);
-        etPassword = (EditText) findViewById(R.id.etPassword);
-
-        btSignUp = (Button) findViewById(R.id.btSignUp);
-        btForgot = (Button) findViewById(R.id.btForgot);
-        btLogin = (Button) findViewById(R.id.btLogin);
-
-        
-
-        btSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "SignUp pressed", Toast.LENGTH_SHORT)
-                    .show();
-            }
-        });
-        btForgot.setOnClickListener(
-            view -> Toast.makeText(getApplicationContext(), "Forgot is pressed", Toast.LENGTH_SHORT)
-                .show());
 
         btLogin.setOnClickListener(view -> {
             boolean someError = false;
@@ -60,10 +46,47 @@ public class LogoActivity extends AppCompatActivity {
                 someError = true;
             } else {
                 etPassword.setError(null);
-                someError=false;
+                someError = false;
             }
 
-            if(!someError) startActivity(new Intent(getApplicationContext(), BooksListActivity.class));
+            if (!someError) {
+                startActivity(new Intent(getApplicationContext(), BooksListActivity.class));
+            }
         });
+    }
+
+    @OnClick(R.id.btSignUp) public void btSignUpClick(View v) {
+        Toast.makeText(getApplicationContext(), "SignUp pressed", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnClick(R.id.btForgot) public void btForgotUpClick(View v) {
+        Toast.makeText(getApplicationContext(), "Forgot is pressed", Toast.LENGTH_SHORT).show();
+    }
+
+    @OnTextChanged(value = R.id.etPassword, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
+    public void passwordCheck(Editable s) {
+        if (etPassword.length() < 6) {
+            etPassword.setError("passwort is short");
+            someError = true;
+        } else {
+            etPassword.setError(null);
+            someError = false;
+        }
+    }
+
+    @OnTextChanged(value = R.id.etName) public void emailCheck() {
+        if (etName.getText().toString().length() < 1) {
+            etName.setError("is empty");
+            someError = true;
+        } else {
+            etName.setError(null);
+            someError = false;
+        }
+    }
+
+    @OnClick(R.id.btLogin) public void btLoginClick() {
+        if (!someError) {
+            startActivity(new Intent(getApplicationContext(), BooksListActivity.class));
+        }
     }
 }
