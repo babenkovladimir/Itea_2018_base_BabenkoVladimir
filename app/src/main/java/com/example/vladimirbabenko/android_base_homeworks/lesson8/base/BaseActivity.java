@@ -1,4 +1,4 @@
-package com.example.vladimirbabenko.android_base_homeworks.lesson8;
+package com.example.vladimirbabenko.android_base_homeworks.lesson8.base;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;

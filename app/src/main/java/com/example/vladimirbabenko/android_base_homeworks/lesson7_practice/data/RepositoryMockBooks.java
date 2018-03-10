@@ -1,11 +1,10 @@
-package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils;
+package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.data;
 
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataManager {
-
+public class RepositoryMockBooks implements IRepositoryMock<BookEntity> {
     private static String[] AuthtorNames = {
         "Author1", "Author2", "Author3", "Author4", "Author5", "Author6", "Author7", "Author8",
         "Author9", "Author10", "Author11", "Author12", "Author13"
@@ -36,8 +35,7 @@ public class DataManager {
         "", "", "", "", "", "", "", "", "", "", "", ""
     };
 
-
-    public static List<BookEntity> getMockData(){
+    @Override public List<BookEntity> fetchMocks() {
         List<BookEntity> books = new ArrayList<>();
         for (int i = 0; i < AuthtorNames.length; i++) {
             books.add(new BookEntity(AuthtorNames[i], BookNames[i], imageUrls[i], bookRating[i],
