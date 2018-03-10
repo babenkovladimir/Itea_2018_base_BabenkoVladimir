@@ -14,10 +14,11 @@ import com.example.vladimirbabenko.android_base_homeworks.R;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
 import com.squareup.picasso.Picasso;
 import java.util.List;
+import lombok.Setter;
 
 public class BookListAdapter extends ArrayAdapter<BookEntity> {
 
-    private List<BookEntity> books;
+    private @Setter List<BookEntity> books;
     private Context context;
 
     public BookListAdapter(@NonNull Context context, int resource,
@@ -25,11 +26,6 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
         super(context, resource, objects);
         this.books = objects;
         this.context = context;
-    }
-
-    public void setBooks(List<BookEntity> books) {
-        this.books = books;
-        notifyDataSetChanged();
     }
 
     public void addBook(BookEntity book) {
@@ -55,7 +51,7 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
 
         ImageView bookImage = (ImageView) view.findViewById(R.id.ivBookLogo);
         TextView nameOfBook = (TextView) view.findViewById(R.id.tvNameOfBook);
-        TextView author = (TextView) view.findViewById(R.id.tvAuthorofBook);
+        TextView author = (TextView) view.findViewById(R.id.tvAuthorOfBook);
         RatingBar ratingBar = (RatingBar) view.findViewById(R.id.rbRaitingBar);
 
         Picasso.with(context)
@@ -65,7 +61,7 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
             .fit()
             .into(bookImage);
 
-        nameOfBook.setText(books.get(position).getNameofBook());
+        nameOfBook.setText(books.get(position).getNameOfBook());
         author.setText(books.get(position).getAuthor());
         ratingBar.setRating(books.get(position).getRate());
 
