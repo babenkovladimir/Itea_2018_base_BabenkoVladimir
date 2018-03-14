@@ -1,7 +1,9 @@
-package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils;
+package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +14,10 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.example.vladimirbabenko.android_base_homeworks.R;
-import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BookPreviewActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.interfaces.IItemClickListner;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.interfaces.IItemLongClickListner;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,15 +51,37 @@ public class BookRecycleViewAdapter
             .into(holder.ivBookLogo);
 
         holder.setItemClickListner(new IItemClickListner() {
-            @Override public void onClick(View v, int position, boolean isLongClick) {
-                if (isLongClick) {
-                    books.remove(position);
-                    notifyDataSetChanged();
-                } else {
-                    Intent intent = new Intent(mContext, BookPreviewActivity.class);
-                    intent.putExtra(BooksConstants.BOOK_ENTITY_KEY_PREVIEW, books.get(position));
-                    mContext.startActivity(intent);
-                }
+            @Override public void onClick(View view, int position) {
+                Intent intent = new Intent(mContext, BookPreviewActivity.class);
+                intent.putExtra(BooksConstants.BOOK_ENTITY_KEY_PREVIEW, books.get(position));
+                mContext.startActivity(intent);
+            }
+        });
+
+        holder.setItemLongClickListner(new IItemLongClickListner() {
+            @Override public void onClick(View view, int position) {
+                String author = books.get(position).getAuthor();
+                String nameofBook = books.get(position).getNameOfBook();
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+                builder.setMessage(
+                    "Are you sure you want remove " + nameofBook + " " + author + "?")
+                    .setTitle("Confirmation")
+                    .setNeutralButton("no", new DialogInterface.OnClickListener() {
+                        @Override public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    })
+                    .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                        @Override public void onClick(DialogInterface dialog, int which) {
+                            books.remove(position);
+                            notifyDataSetChanged();
+                        }
+                    })
+                    .setCancelable(false);
+
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
     }
@@ -75,10 +101,6 @@ public class BookRecycleViewAdapter
         notifyDataSetChanged();
     }
 
-    public BookEntity getBook(int position) {
-        return books.get(position);
-    }
-
     /*
     * BookHolder
     * */
@@ -91,6 +113,7 @@ public class BookRecycleViewAdapter
         @BindView(R.id.rbRaitingBar) RatingBar rbRaitingBar;
 
         private IItemClickListner itemClickListner;
+        private IItemLongClickListner itemLongClickListner;
 
         public BookHolder(View itemView) {
             super(itemView);
@@ -104,12 +127,16 @@ public class BookRecycleViewAdapter
             this.itemClickListner = itemClickListner;
         }
 
-        @Override public void onClick(View v) {
-            itemClickListner.onClick(v, getAdapterPosition(), false);
+        public void setItemLongClickListner(IItemLongClickListner itemLongClickListner) {
+            this.itemLongClickListner = itemLongClickListner;
         }
 
-        @Override public boolean onLongClick(View v) {
-            itemClickListner.onClick(v, getAdapterPosition(), true);
+        @Override public void onClick(View view) {
+            itemClickListner.onClick(view, getAdapterPosition());
+        }
+
+        @Override public boolean onLongClick(View view) {
+            itemLongClickListner.onClick(view, getAdapterPosition());
             return true;
         }
     }
