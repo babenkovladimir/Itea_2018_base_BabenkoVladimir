@@ -1,11 +1,14 @@
 package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
@@ -52,7 +55,30 @@ public class BooksListActivity extends BaseActivity {
 
     // Arguments?
     @OnItemLongClick(R.id.lvBooksList) public boolean bookListOnItemLongClick(int position) {
-        ((BookListAdapter) booksList.getAdapter()).removeBook(position);
+        String bookName = ((BookListAdapter) booksList.getAdapter()).getBook(position).getNameOfBook();
+        String bookAuthor = ((BookListAdapter) booksList.getAdapter()).getBook(position).getAuthor();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(BooksListActivity.this);
+        builder.setTitle("Confirmation");
+        builder.setMessage("Are you sure you want delete "+ bookName+ " "+ bookAuthor);
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(BooksListActivity.this, "not deleted", Toast.LENGTH_SHORT).show();
+                dialog.cancel();
+            }
+        });
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                ((BookListAdapter) booksList.getAdapter()).removeBook(position);
+                Toast.makeText(BooksListActivity.this,  "deleted", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
         return true;
     }
 

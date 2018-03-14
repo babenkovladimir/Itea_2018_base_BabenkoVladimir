@@ -57,7 +57,11 @@
         <activity
             android:name=".lesson7_practice.AddBookActivity"
             android:label="Add Book"/>
-        <activity android:name=".lesson7_practice.BookPreviewActivity" android:label="Book preview">
+        <activity
+            android:name=".lesson7_practice.BookPreviewActivity"
+            android:label="Book preview">
+        </activity>
+        <activity android:name=".lesson9.AlertDialogActivity">
         </activity>
     </application>
 

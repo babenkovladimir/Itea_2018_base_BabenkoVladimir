@@ -11,5 +11,6 @@ public abstract class BaseActivity extends AppCompatActivity {// Чтобы не
     @Override public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
+
     }
 }

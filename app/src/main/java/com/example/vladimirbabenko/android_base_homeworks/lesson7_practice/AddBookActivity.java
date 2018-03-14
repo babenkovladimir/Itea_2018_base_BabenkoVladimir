@@ -21,8 +21,8 @@ public class AddBookActivity extends BaseActivity {
     @BindView(R.id.rbBookRate) RatingBar rbBookRate;
 
     @Override public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
+        super.onCreate(savedInstanceState);
     }
 
     @OnClick(R.id.btBackPreview) public void btBackPreviewClick(View v) {

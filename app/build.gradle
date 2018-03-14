@@ -41,4 +41,6 @@ dependencies {
     // Lombock
     compileOnly 'org.projectlombok:lombok:1.16.20'
     annotationProcessor 'org.projectlombok:lombok:1.16.20'
+    //RV
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
 }

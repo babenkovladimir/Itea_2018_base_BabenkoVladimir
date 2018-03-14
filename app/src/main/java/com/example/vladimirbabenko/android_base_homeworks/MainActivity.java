@@ -3,25 +3,29 @@ package com.example.vladimirbabenko.android_base_homeworks;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
+import butterknife.ButterKnife;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.IntentExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.ArrayAdapterExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson6CalssMaterial.ArrayAdapterCustomActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.LogoActivity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson9.AlertDialogActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btShowSignInActivity, btShowOtherTasks, btCustomUserViewActivity, btDynamicGui,
-        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter, btLesson7Practice;
+        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter, btLesson7Practice, btLesson9Practice;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         btShowSignInActivity = (Button) findViewById(R.id.btShowSignInActivity);
         btShowOtherTasks = (Button) findViewById(R.id.btShowOtherTasks);
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btArrayAdapterAndLifecycle = (Button) findViewById(R.id.btArrayAdapterAndLifecycle);
         bCustomArrayAdapter = (Button) findViewById(R.id.bCustomArrayAdapter);
         btLesson7Practice = (Button) findViewById(R.id.btLesson7Practice);
+        btLesson9Practice = (Button) findViewById(R.id.btLesson9Practice);
 
         btShowSignInActivity.setOnClickListener(
             view -> startActivity(new Intent(this, MainActivityHomeWorkScreen.class)));
@@ -55,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         bCustomArrayAdapter.setOnClickListener(view-> startActivity(new Intent(this, ArrayAdapterCustomActivity.class)));
 
         btLesson7Practice.setOnClickListener(view-> startActivity(new Intent(this, LogoActivity.class)));
+        btLesson9Practice.setOnClickListener(view-> startActivity(new Intent(this, AlertDialogActivity.class)));
 
     }
 }
