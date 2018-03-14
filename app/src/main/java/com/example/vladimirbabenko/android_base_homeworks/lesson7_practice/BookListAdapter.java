@@ -56,8 +56,8 @@ public class BookListAdapter extends ArrayAdapter<BookEntity> {
 
         Picasso.with(context)
             .load(books.get(position).getImageUrl())
-            .placeholder(R.drawable.open_book_logo)
-            .error(R.drawable.open_book_logo)
+            .placeholder(R.drawable.ic_launcher_background)
+            .error(R.drawable.ic_google_plus_white_24dp)
             .fit()
             .into(bookImage);
 

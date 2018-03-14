@@ -5,10 +5,6 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.C
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by VladimirBabenko on 3/8/2018.
- */
-
 public class RepositoryMockCountries implements IRepositoryMock<Country> {
 
     public List<Country> fetchMocks() {
@@ -29,6 +25,10 @@ public class RepositoryMockCountries implements IRepositoryMock<Country> {
             R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground,
             R.drawable.ic_launcher_foreground, R.drawable.ic_launcher_foreground
         };
+
+        for(int i =0; i<countryNames.length; i++){
+            countries.add(new Country(countryNames[i], countryCapitals[i], pictures[i]));
+        }
         return countries;
     }
 }

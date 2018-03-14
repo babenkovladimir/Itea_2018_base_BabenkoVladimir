@@ -10,8 +10,8 @@
     android:weightSum="10"
     >
 
-    <ListView
-        android:id="@+id/lvBooksList"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvBooksRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="5dp"

@@ -3,11 +3,11 @@ package com.example.vladimirbabenko.android_base_homeworks.lesson8.data;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.Country;
 import java.util.List;
 
-public class DataManager {
+public class DataManagerLesson8 {
 
     RepositoryMockCountries mRepositoryMockCountries;
 
-    public DataManager() {
+    public DataManagerLesson8() {
         mRepositoryMockCountries = new RepositoryMockCountries();
     }
 
