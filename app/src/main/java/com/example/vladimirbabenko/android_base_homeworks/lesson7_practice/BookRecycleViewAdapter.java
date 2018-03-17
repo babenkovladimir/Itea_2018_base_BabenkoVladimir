@@ -49,41 +49,6 @@ public class BookRecycleViewAdapter
             .error(R.drawable.ic_launcher_background)
             .fit()
             .into(holder.ivBookLogo);
-
-        holder.setItemClickListner(new IItemClickListner() {
-            @Override public void onClick(View view, int position) {
-                Intent intent = new Intent(mContext, BookPreviewActivity.class);
-                intent.putExtra(BooksConstants.BOOK_ENTITY_KEY_PREVIEW, books.get(position));
-                mContext.startActivity(intent);
-            }
-        });
-
-        holder.setItemLongClickListner(new IItemLongClickListner() {
-            @Override public void onClick(View view, int position) {
-                String author = books.get(position).getAuthor();
-                String nameofBook = books.get(position).getNameOfBook();
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-                builder.setMessage(
-                    "Are you sure you want remove " + nameofBook + " " + author + "?")
-                    .setTitle("Confirmation")
-                    .setNeutralButton("no", new DialogInterface.OnClickListener() {
-                        @Override public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    })
-                    .setPositiveButton("yes", new DialogInterface.OnClickListener() {
-                        @Override public void onClick(DialogInterface dialog, int which) {
-                            books.remove(position);
-                            notifyDataSetChanged();
-                        }
-                    })
-                    .setCancelable(false);
-
-                AlertDialog dialog = builder.create();
-                dialog.show();
-            }
-        });
     }
 
     @Override public int getItemCount() {
@@ -101,43 +66,23 @@ public class BookRecycleViewAdapter
         notifyDataSetChanged();
     }
 
+    public List<BookEntity> getBooks() {
+        return books;
+    }
+
     /*
     * BookHolder
     * */
-    static class BookHolder extends RecyclerView.ViewHolder
-        implements View.OnClickListener, View.OnLongClickListener {
+    static class BookHolder extends RecyclerView.ViewHolder {
 
         @BindView(R.id.ivBookLogo) ImageView ivBookLogo;
         @BindView(R.id.tvNameOfBook) TextView tvNameOfBook;
         @BindView(R.id.tvAuthorOfBook) TextView tvAuthorOfBook;
         @BindView(R.id.rbRaitingBar) RatingBar rbRaitingBar;
 
-        private IItemClickListner itemClickListner;
-        private IItemLongClickListner itemLongClickListner;
-
         public BookHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
-
-            itemView.setOnClickListener(this);
-            itemView.setOnLongClickListener(this);
-        }
-
-        public void setItemClickListner(IItemClickListner itemClickListner) {
-            this.itemClickListner = itemClickListner;
-        }
-
-        public void setItemLongClickListner(IItemLongClickListner itemLongClickListner) {
-            this.itemLongClickListner = itemLongClickListner;
-        }
-
-        @Override public void onClick(View view) {
-            itemClickListner.onClick(view, getAdapterPosition());
-        }
-
-        @Override public boolean onLongClick(View view) {
-            itemLongClickListner.onClick(view, getAdapterPosition());
-            return true;
         }
     }
 }

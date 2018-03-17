@@ -10,7 +10,7 @@ public class DataManager {
         mRepositoryMockBooks = new RepositoryMockBooks();
     }
 
-    public List<BookEntity> fetchMoks(){
+    public List<BookEntity> fetchMoks() {
         return mRepositoryMockBooks.fetchMocks();
     }
 

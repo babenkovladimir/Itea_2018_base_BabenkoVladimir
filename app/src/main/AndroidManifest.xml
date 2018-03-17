@@ -63,6 +63,8 @@
         </activity>
         <activity android:name=".lesson9.AlertDialogActivity">
         </activity>
+        <activity android:name=".lesson10.Lesson10Activity">
+        </activity>
     </application>
 
 </manifest>

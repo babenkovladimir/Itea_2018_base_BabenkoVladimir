@@ -3,28 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="8dp"
     android:gravity="bottom"
     android:orientation="vertical"
-    android:layout_margin="8dp"
-    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity"
     android:weightSum="10"
+    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity"
     >
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvBooksRecyclerView"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srlSwipeRefresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="5dp"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
+        android:layout_height="wrap_content"
         android:layout_weight="9"
-        />
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvBooksRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
     <Button
         android:id="@+id/btAddBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add"
         android:layout_weight="1"
+        android:text="@string/add"
         android:textSize="18sp"
         />
 </LinearLayout>

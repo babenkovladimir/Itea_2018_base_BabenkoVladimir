@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
 import butterknife.ButterKnife;
+import com.example.vladimirbabenko.android_base_homeworks.lesson10.Lesson10Activity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.IntentExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.ArrayAdapterExampleActivity;
@@ -19,7 +20,7 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson9.AlertDialogAct
 public class MainActivity extends AppCompatActivity {
 
     private Button btShowSignInActivity, btShowOtherTasks, btCustomUserViewActivity, btDynamicGui,
-        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter, btLesson7Practice, btLesson9Practice;
+        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter, btLesson7Practice, btLesson9Practice, btLesson10Practice;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         bCustomArrayAdapter = (Button) findViewById(R.id.bCustomArrayAdapter);
         btLesson7Practice = (Button) findViewById(R.id.btLesson7Practice);
         btLesson9Practice = (Button) findViewById(R.id.btLesson9Practice);
+        btLesson10Practice = (Button) findViewById(R.id.btLesson10Practice);
 
         btShowSignInActivity.setOnClickListener(
             view -> startActivity(new Intent(this, MainActivityHomeWorkScreen.class)));
@@ -61,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
 
         btLesson7Practice.setOnClickListener(view-> startActivity(new Intent(this, LogoActivity.class)));
         btLesson9Practice.setOnClickListener(view-> startActivity(new Intent(this, AlertDialogActivity.class)));
+        btLesson10Practice.setOnClickListener(view-> startActivity(new Intent(this,
+            Lesson10Activity.class)));
+
+
 
     }
 }
