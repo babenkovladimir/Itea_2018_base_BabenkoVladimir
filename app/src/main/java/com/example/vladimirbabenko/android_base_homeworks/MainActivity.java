@@ -3,17 +3,14 @@ package com.example.vladimirbabenko.android_base_homeworks;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 
-import butterknife.ButterKnife;
-import com.example.vladimirbabenko.android_base_homeworks.lesson10.Lesson10Activity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson10.Lesson11Activity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.IntentExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.ArrayAdapterExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson6CalssMaterial.ArrayAdapterCustomActivity;
-import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.LogoActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson9.AlertDialogActivity;
 
@@ -64,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         btLesson7Practice.setOnClickListener(view-> startActivity(new Intent(this, LogoActivity.class)));
         btLesson9Practice.setOnClickListener(view-> startActivity(new Intent(this, AlertDialogActivity.class)));
         btLesson10Practice.setOnClickListener(view-> startActivity(new Intent(this,
-            Lesson10Activity.class)));
+            Lesson11Activity.class)));
 
 
 
