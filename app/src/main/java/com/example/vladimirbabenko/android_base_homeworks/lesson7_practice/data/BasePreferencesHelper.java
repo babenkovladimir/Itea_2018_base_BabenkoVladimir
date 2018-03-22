@@ -4,6 +4,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
 
+/*
+*
+* Apply - он асинхронный
+* */
+
 class BasePreferencesHelper {
 
     private SharedPreferences mPreferences;

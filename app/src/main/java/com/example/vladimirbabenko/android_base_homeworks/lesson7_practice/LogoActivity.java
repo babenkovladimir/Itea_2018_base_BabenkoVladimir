@@ -60,8 +60,8 @@ public class LogoActivity extends BaseActivity {
     }
 
     @OnClick(R.id.btSignUp) public void btSignUpClick(View v) {
-        startActivity(new Intent(getApplicationContext(), SignUpActivity.class)); // Run java activity
-        //startActivity(new Intent(getApplicationContext(), SignUpActivityKotlin.class)); // run kotlin activity
+        //startActivity(new Intent(getApplicationContext(), SignUpActivity.class)); // Run java activity
+        startActivity(new Intent(getApplicationContext(), SignUpActivityKotlin.class)); // run kotlin activity
         finish();
     }
 
