@@ -60,7 +60,8 @@ public class LogoActivity extends BaseActivity {
     }
 
     @OnClick(R.id.btSignUp) public void btSignUpClick(View v) {
-        startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
+        startActivity(new Intent(getApplicationContext(), SignUpActivity.class)); // Run java activity
+        //startActivity(new Intent(getApplicationContext(), SignUpActivityKotlin.class)); // run kotlin activity
         finish();
     }
 
@@ -79,7 +80,7 @@ public class LogoActivity extends BaseActivity {
         }
     }
 
-    @OnTextChanged(value = R.id.etName) public void emailCheck() {
+    @OnTextChanged(value = R.id.etName, callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED) public void emailCheck() {
         if (etName.getText().toString().length() < 1) {
             etName.setError("is empty");
             someError = true;
