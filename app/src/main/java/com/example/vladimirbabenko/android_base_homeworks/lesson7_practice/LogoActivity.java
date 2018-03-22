@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.OnTextChanged;
 import com.example.vladimirbabenko.android_base_homeworks.R;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
 import com.example.vladimirbabenko.android_base_homeworks.lesson8.base.BaseActivity;
 
 public class LogoActivity extends BaseActivity {
@@ -20,6 +22,8 @@ public class LogoActivity extends BaseActivity {
     @BindView(R.id.btSignUp) Button btSignUp;
     @BindView(R.id.btForgot) Button btForgot;
     @BindView(R.id.btLogin) Button btLogin;
+    @BindView(R.id.cbRemember) CheckBox cbRemember;
+
 
     private Boolean someError = true;
 
@@ -56,7 +60,8 @@ public class LogoActivity extends BaseActivity {
     }
 
     @OnClick(R.id.btSignUp) public void btSignUpClick(View v) {
-        Toast.makeText(getApplicationContext(), "SignUp pressed", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
+        finish();
     }
 
     @OnClick(R.id.btForgot) public void btForgotUpClick(View v) {
@@ -86,7 +91,9 @@ public class LogoActivity extends BaseActivity {
 
     @OnClick(R.id.btLogin) public void btLoginClick() {
         if (!someError) {
+            mDataManager.getPrefs().setUserChecked(cbRemember.isChecked());
             startActivity(new Intent(getApplicationContext(), BooksListActivity.class));
+            finish();// чтобы нельзя было вернуться на кактивити
         }
     }
 }

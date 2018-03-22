@@ -1,12 +1,18 @@
 package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils;
 
-/**
- * Created by BabenkoVladimir on 3/7/2018.
- */
-
 public interface BooksConstants {
     int ADD_BOOK_REQUEST_CODE = 123;
     String BOOK_ENTITY_KEY = "BOOK_ENTITY_KEY";
     String BOOK_ENTITY_KEY_PREVIEW = "BOOK_ENTITY_KEY_PREVIEW";
 
+    // todo remove key to Spref Helper
+
+    interface PrefsConstants {
+        String APP_PREFERENCES = "Itea_2018_base";
+        String IS_USER_LOGED_IN_KEY = "IS_USER_LOGED_IN_KEY";
+        String USER_EMAIL_KEY = "USER_EMAIL_KEY";
+        String USER_PASSWORD_KEY = "USER_PASSWORD_KEY";
+        String USER_NAME = "USER_NAME";
+        String USER_SECOND_NAME = "USER_SECOND_NAME";
+    }
 }

@@ -11,11 +11,13 @@ public abstract class BaseActivity extends AppCompatActivity {// Чтобы не
 
     protected DataManager mDataManager;
     protected String TAG="TAG";
+    protected String APP_PREFERENCES = "Itea_2018_base";
+
 
     @Override public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
 
-        mDataManager = new DataManager();
+        mDataManager = new DataManager(getApplicationContext());
     }
 }
