@@ -18,6 +18,6 @@ public abstract class BaseActivity extends AppCompatActivity {// Чтобы не
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
 
-        mDataManager = new DataManager(getApplicationContext());
+        mDataManager = DataManager.getInstance(getApplicationContext());
     }
 }
