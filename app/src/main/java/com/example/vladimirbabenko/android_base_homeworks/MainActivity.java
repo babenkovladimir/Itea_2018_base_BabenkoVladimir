@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         bCustomArrayAdapter.setOnClickListener(view-> startActivity(new Intent(this, ArrayAdapterCustomActivity.class)));
 
         btLesson7Practice.setOnClickListener(view-> {
-            boolean isUserLogged = new DataManager(getApplicationContext()).getPrefs().isUserChecked();
+            boolean isUserLogged = DataManager.getInstance(getApplicationContext()).getPrefs().isUserChecked();
 
             if(!isUserLogged)
             startActivity(new Intent(this, LogoActivity.class));

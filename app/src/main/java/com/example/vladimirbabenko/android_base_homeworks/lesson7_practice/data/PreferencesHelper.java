@@ -15,6 +15,7 @@ public class PreferencesHelper extends BasePreferencesHelper {
         setUserPassword(-1);
         setUserName("");
         setUserSecondName("");
+        setDialogIsShown(false);
     }
 
     public void setUserChecked(Boolean param) {
@@ -54,5 +55,13 @@ public class PreferencesHelper extends BasePreferencesHelper {
 
     public String getUserSecondName(){
         return getString(BooksConstants.PrefsConstants.USER_SECOND_NAME);
+    }
+
+    public boolean isDialogShown() {
+        return getBoolean(BooksConstants.PrefsConstants.IS_CONGRATULATION_SHOWN_KEY);
+    }
+
+    public void setDialogIsShown(boolean isShown){
+        setBoolean(BooksConstants.PrefsConstants.IS_CONGRATULATION_SHOWN_KEY, isShown);
     }
 }

@@ -5,10 +5,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +23,8 @@ import butterknife.OnClick;
 import com.example.vladimirbabenko.android_base_homeworks.MainActivity;
 import com.example.vladimirbabenko.android_base_homeworks.R;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.fragments.CongratulationDialog;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.fragments.CongratulationDialogKt;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.ItemClickSupport;
 import com.example.vladimirbabenko.android_base_homeworks.lesson8.base.BaseActivity;
@@ -40,6 +45,7 @@ public class BooksListActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         setupUI();
+        checkAndShowCongratulationFragment();
     }
 
     private void setupUI() {
@@ -55,7 +61,8 @@ public class BooksListActivity extends BaseActivity {
                 Toast.makeText(BooksListActivity.this, "onRegresh", Toast.LENGTH_SHORT).show();
 
                 CountDownTimer timer = new CountDownTimer(3000, 1000) {
-                    @Override public void onTick(long millisUntilFinished) {}
+                    @Override public void onTick(long millisUntilFinished) {
+                    }
 
                     @Override public void onFinish() {
                         adapter.notifyDataSetChanged();
@@ -108,6 +115,25 @@ public class BooksListActivity extends BaseActivity {
             });
     }
 
+    private void checkAndShowCongratulationFragment() {
+        CountDownTimer timer= new CountDownTimer(2000, 1000) {
+            @Override public void onTick(long millisUntilFinished) {
+            }
+
+            @Override public void onFinish() {
+                Log.d(TAG, "onFinish: is dialog shown" +mDataManager.getPrefs().isDialogShown());
+                if (!mDataManager.getPrefs().isDialogShown()) {
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                    CongratulationDialogKt.Companion.newInstance(null).show(ft, "Congratulation dialog");
+                    //CongratulationDialog.newInstance(null).show(ft, "CongratulationDialog");
+
+                }
+            }
+        };
+        timer.start();
+    }
+
     @OnClick(R.id.btAddBook) public void btAddBockClick(View v) {
         Intent intent = new Intent(getApplicationContext(), AddBookActivity.class);
         startActivityForResult(intent, BooksConstants.ADD_BOOK_REQUEST_CODE);
@@ -132,7 +158,6 @@ public class BooksListActivity extends BaseActivity {
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.miLogout:
-
                 mDataManager.getPrefs().clearUserPreferences();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -143,5 +168,4 @@ public class BooksListActivity extends BaseActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

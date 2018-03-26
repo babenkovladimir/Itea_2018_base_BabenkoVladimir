@@ -70,7 +70,13 @@
             android:label="SignIn"
             android:launchMode="singleTask">
         </activity>
-        <activity android:name=".lesson7_practice.SignUpActivityKotlin" android:label="Kotlin activity!!!" android:launchMode="singleTask">
+        <activity
+            android:name=".lesson7_practice.SignUpActivityKotlin"
+            android:label="Kotlin activity!!!"
+            android:launchMode="singleTask">
+        </activity>
+        <activity android:name=".lesson12.DialogFragmentActivity"
+            android:label="FragmentDialog">
         </activity>
     </application>
 

@@ -14,5 +14,6 @@ public interface BooksConstants {
         String USER_PASSWORD_KEY = "USER_PASSWORD_KEY";
         String USER_NAME = "USER_NAME";
         String USER_SECOND_NAME = "USER_SECOND_NAME";
+        String IS_CONGRATULATION_SHOWN_KEY ="IS_CONGRATULATION_SHOWN_KEY";
     }
 }

@@ -45,5 +45,7 @@
     <string name="forgot">forgot</string>
     <string name="lesson_9_practice">lesson_9_practice</string>
     <string name="lesson_10_practice">lesson_10_practice</string>
+    <string name="lesson_12_dialog_fragment">lesson_12_Dialog Fragment</string>
+    <string name="lesson_12_dialogfragment">Lesson 12_DialogFragment</string>
 
 </resources>
