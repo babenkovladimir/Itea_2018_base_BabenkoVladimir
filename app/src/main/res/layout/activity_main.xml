@@ -159,6 +159,21 @@
                 android:layout_height="wrap_content"
                 android:text="@string/lesson_12_dialog_fragment"
                 android:textColor="@android:color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/lesson13"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btLesson13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lesson13"
+                android:textColor="@android:color/black" />
         </LinearLayout>
 
     </ScrollView>
