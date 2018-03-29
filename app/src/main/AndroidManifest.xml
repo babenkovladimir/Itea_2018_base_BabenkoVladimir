@@ -81,6 +81,9 @@
         </activity>
         <activity android:name=".lesson13.Lesson13">
         </activity>
+        <activity android:name=".lesson14.Lesson14Activity"
+            android:label="Lesson14">
+        </activity>
     </application>
 
 </manifest>
