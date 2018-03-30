@@ -13,84 +13,88 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import com.example.vladimirbabenko.android_base_homeworks.R;
 import com.example.vladimirbabenko.android_base_homeworks.lesson8.base.BaseActivity;
+import java.util.Random;
 
 public class Lesson14Activity extends BaseActivity {
 
     private ValidAsynckTask mAsynckTask;
 
     @BindView(R.id.etTextTobreak) EditText textToBreak;
-    @BindView(R.id.tvShowHackedText) TextView mTextView;
+    @BindView(R.id.tvShowHackedText) TextView mTextViewHackedText;
+    @BindView(R.id.tvShowTimeOfHack) TextView mTextViewHackedTextTime;
     @BindView(R.id.btHack) Button btHack;
 
     @Override public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_lesson14);
         super.onCreate(savedInstanceState);
-
-        //int toHack = Integer.valueOf(textToBreak.getText().toString());
-        //
-        //mAsynckTask = new ValidAsynckTask();
-        //mAsynckTask.execute(toHack);
     }
 
     @OnClick(R.id.btHack) public void hack() {
-        //int toHack = Integer.valueOf(textToBreak.getText().toString());
         mAsynckTask = new ValidAsynckTask();
         mAsynckTask.execute(textToBreak.getText().toString());
     }
 
-    class ValidAsynckTask extends AsyncTask<String, String, String> {
+    class ValidAsynckTask extends AsyncTask<String, String, Integer> {
 
         @Override protected void onPreExecute() {
-            Log.wtf("MyAsyncTask", "onPreExecute: ");
             super.onPreExecute();
+            Log.wtf("MyAsyncTask", "onPreExecute: ");
         }
 
-        @Override protected String doInBackground(String... needToHackString) {
-            Log.wtf("MyAsyncTask", "doInBackground:");
-
-            //char[] symbols = String.valueOf(param).toCharArray();
-           // Log.d(TAG, "doInBackground: chars = " + symbols[0]);
+        @Override protected Integer doInBackground(String... needToHackString) {
+            Log.d(TAG, "doInBackground: string from class "+ needToHackString);
 
             int indexHacking = 0;
+            int hackTimeRezult = 0;
             String hackRezult = "";
-            while (indexHacking < needToHackString[0].length()) {
 
+            while (indexHacking < needToHackString[0].length()) {
                 for (char c = '\u0000'; c < 'z'; c++) {
-                    if(c==needToHackString[0].charAt[indexHacking]){
+                    if (c == needToHackString[0].charAt(indexHacking)) {
                         try {
-                            Thread.sleep(500);
+                            int hackTimeCurrent = new Random().nextInt(500);
+                            hackTimeRezult += hackTimeCurrent;
+                            Thread.sleep(hackTimeCurrent);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        hackRezult= hackRezult+c;
-
-
+                        hackRezult = hackRezult + c;
+                        publishProgress(hackRezult);
+                    }
+                }
+                for (int i = 1; i < 10; i++) {
+                    if ((char)i == needToHackString[0].charAt(indexHacking)) {
+                        try {
+                            int hackTimeCurrent = new Random().nextInt(500);
+                            hackTimeRezult += hackTimeCurrent;
+                            Thread.sleep(hackTimeCurrent);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        hackRezult = hackRezult + (char)i;
+                        publishProgress(hackRezult);
                     }
                 }
                 indexHacking++;
             }
-
-            publishProgress("String", "Stroka2");
-            return "Rezult String";
+            return  hackTimeRezult;
         }
 
         @Override protected void onProgressUpdate(String... values) {
-            Log.wtf("MyAsyncTask", "OnProgressUpdate" + values[0] + "  " + values[1]);
-            Toast.makeText(Lesson14Activity.this, "OnProgressUpdate" + values[0] + "  " + values[1],
-                Toast.LENGTH_SHORT).show();
             super.onProgressUpdate(values);
+            Log.wtf("MyAsyncTask", "OnProgressUpdate" + values[0]);
+            mTextViewHackedText.setText(values[0]);
         }
 
         @Override protected void onCancelled() {
-            Log.wtf("MyAsyncTask", "onCanceled");
             super.onCancelled();
+            Log.wtf("MyAsyncTask", "onCanceled");
         }
 
-        @Override protected void onPostExecute(String aVoid) {
-            Log.wtf("MyAsyncTask", "onPostExecute: " + aVoid);
-            Toast.makeText(Lesson14Activity.this, "onPostExecute" + aVoid, Toast.LENGTH_SHORT)
-                .show();
-            super.onPostExecute(aVoid);
+        @Override protected void onPostExecute(Integer hackedTime) {
+            super.onPostExecute(hackedTime);
+            Log.wtf("MyAsyncTask", "onPostExecute: " + hackedTime);
+            mTextViewHackedTextTime.setText(String.valueOf(hackedTime));
         }
     }
 }
