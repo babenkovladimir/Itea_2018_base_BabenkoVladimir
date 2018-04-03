@@ -10,6 +10,7 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson10.Lesson11Activ
 import com.example.vladimirbabenko.android_base_homeworks.lesson12.DialogFragmentActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson13.Lesson13;
 import com.example.vladimirbabenko.android_base_homeworks.lesson14.Lesson14Activity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson15.Lesson15;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.IntentExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.ArrayAdapterExampleActivity;
@@ -23,7 +24,7 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson9.AlertDialogAct
 public class MainActivity extends AppCompatActivity {
 
     private Button btShowSignInActivity, btShowOtherTasks, btCustomUserViewActivity, btDynamicGui,
-        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter, btLesson7Practice, btLesson9Practice, btLesson10Practice,btLesson12DialogFragment, btLesson13, btLesson14;
+        btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter, btLesson7Practice, btLesson9Practice, btLesson10Practice,btLesson12DialogFragment, btLesson13, btLesson14, btLesson15;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         btLesson12DialogFragment = (Button)findViewById(R.id.btLesson12DialogFragment);
         btLesson13 = (Button)findViewById(R.id.btLesson13);
         btLesson14 = (Button)findViewById(R.id.btLesson14);
+        btLesson15 = (Button) findViewById(R.id.btLesson15);
 
         btShowSignInActivity.setOnClickListener(
             view -> startActivity(new Intent(this, MainActivityHomeWorkScreen.class)));
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         btLesson9Practice.setOnClickListener(view-> startActivity(new Intent(this, AlertDialogActivity.class)));
         btLesson10Practice.setOnClickListener(view-> startActivity(new Intent(this,
             Lesson11Activity.class)));
@@ -84,5 +87,6 @@ public class MainActivity extends AppCompatActivity {
 
         btLesson13.setOnClickListener(view-> startActivity(new Intent(this, Lesson13.class)));
         btLesson14.setOnClickListener(view -> startActivity(new Intent(this, Lesson14Activity.class)));
+        btLesson15.setOnClickListener(view -> startActivity(new Intent(this, Lesson15.class)));
     }
 }

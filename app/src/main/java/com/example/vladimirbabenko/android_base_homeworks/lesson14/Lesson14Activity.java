@@ -27,14 +27,43 @@ public class Lesson14Activity extends BaseActivity {
     @Override public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_lesson14);
         super.onCreate(savedInstanceState);
+
+        mAsynckTask = (ValidAsynckTask) getLastCustomNonConfigurationInstance();
+        if (mAsynckTask!=null){
+            mAsynckTask.link(this);
+        }
     }
 
     @OnClick(R.id.btHack) public void hack() {
         mAsynckTask = new ValidAsynckTask();
+        mAsynckTask.link(this);
         mAsynckTask.execute(textToBreak.getText().toString());
     }
 
-    class ValidAsynckTask extends AsyncTask<String, String, Integer> {
+    @Override public Object onRetainCustomNonConfigurationInstance() {
+        mAsynckTask.link(this);
+        return mAsynckTask;
+    }
+
+    //public Object onRetainCustonConfigurationInstance() {
+    //    // удаляем из MyTask ссылку на старое MainActivity
+    //    mt.unLink();
+    //    return mt;
+
+
+
+    static class ValidAsynckTask extends AsyncTask<String, String, Integer> {
+        Lesson14Activity activity;
+
+        // получаем ссылку на
+        void link( Lesson14Activity act) {
+            activity = act;
+        }
+
+        // обнуляем ссылку
+        void unLink() {
+            activity = null;
+        }
 
         @Override protected void onPreExecute() {
             super.onPreExecute();
@@ -42,7 +71,7 @@ public class Lesson14Activity extends BaseActivity {
         }
 
         @Override protected Integer doInBackground(String... needToHackString) {
-            Log.d(TAG, "doInBackground: string from class "+ needToHackString);
+            Log.d("TAG", "doInBackground: string from class "+ needToHackString);
 
             int indexHacking = 0;
             int hackTimeRezult = 0;
@@ -83,7 +112,7 @@ public class Lesson14Activity extends BaseActivity {
         @Override protected void onProgressUpdate(String... values) {
             super.onProgressUpdate(values);
             Log.wtf("MyAsyncTask", "OnProgressUpdate" + values[0]);
-            mTextViewHackedText.setText(values[0]);
+            activity.mTextViewHackedText.setText(values[0]);
         }
 
         @Override protected void onCancelled() {
@@ -94,7 +123,7 @@ public class Lesson14Activity extends BaseActivity {
         @Override protected void onPostExecute(Integer hackedTime) {
             super.onPostExecute(hackedTime);
             Log.wtf("MyAsyncTask", "onPostExecute: " + hackedTime);
-            mTextViewHackedTextTime.setText(String.valueOf(hackedTime));
+            activity.mTextViewHackedTextTime.setText(String.valueOf(hackedTime));
         }
     }
 }

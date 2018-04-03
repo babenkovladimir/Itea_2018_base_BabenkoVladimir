@@ -1,5 +1,6 @@
 package com.example.vladimirbabenko.android_base_homeworks.lesson8.base;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
