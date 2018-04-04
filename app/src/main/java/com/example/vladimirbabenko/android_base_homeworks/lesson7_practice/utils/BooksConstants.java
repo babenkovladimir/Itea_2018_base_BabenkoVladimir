@@ -4,6 +4,9 @@ public interface BooksConstants {
     int ADD_BOOK_REQUEST_CODE = 123;
     String BOOK_ENTITY_KEY = "BOOK_ENTITY_KEY";
     String BOOK_ENTITY_KEY_PREVIEW = "BOOK_ENTITY_KEY_PREVIEW";
+    String HACK_REZULT = "HACK_RESULT";
+    String HACK_TIME_REZULT = "HACK_TIME_REZULT";
+
 
     // todo remove key to Spref Helper
 

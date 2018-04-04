@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lesson14.Lesson14Activity"
     android:orientation="vertical"
+    tools:context=".lesson14.Lesson14Activity"
     >
 
     <EditText
@@ -19,9 +19,9 @@
 
     <Button
         android:id="@+id/btHack"
-        android:text="Hack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Hack"
         />
 
 
@@ -29,18 +29,38 @@
         android:id="@+id/tvShowHackedText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="23sp"
         android:hint="rezult"
         android:textColorHint="@android:color/darker_gray"
+        android:textSize="23sp"
         />
 
     <TextView
         android:id="@+id/tvShowTimeOfHack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="23sp"
         android:hint="time of hack"
         android:textColorHint="@android:color/darker_gray"
+        android:textSize="23sp"
+        />
+
+
+    <TextView
+        android:id="@+id/tvShowHackedTextByHandler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Handler rezult"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="23sp"
+        />
+
+    <TextView
+        android:id="@+id/tvShowTimeOfHackByHandler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="time of Handler hack "
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="23sp"
         />
 
 </LinearLayout>
