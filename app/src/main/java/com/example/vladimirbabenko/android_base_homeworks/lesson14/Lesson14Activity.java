@@ -38,11 +38,7 @@ public class Lesson14Activity extends BaseActivity {
         if (mAsynckTask != null) {
             mAsynckTask.link(this);
         }
-
         mHandler = new ValidHandler(this);
-        Log.d(TAG, "onCreate: mHAndler = " + mHandler);
-        //mHandler.sendMessage(null);
-
     }
 
     /*
@@ -210,7 +206,8 @@ public class Lesson14Activity extends BaseActivity {
             Bundle bundle = msg.getData();
 
             if (bundle.containsKey(BooksConstants.HACK_TIME_REZULT)) {
-                activity.tvShowTimeOfHackByHandler.setText(String.valueOf(bundle.getInt(BooksConstants.HACK_TIME_REZULT)));
+                activity.tvShowTimeOfHackByHandler.setText(
+                    String.valueOf(bundle.getInt(BooksConstants.HACK_TIME_REZULT)));
             }
 
             if (bundle.containsKey(BooksConstants.HACK_REZULT)) {
