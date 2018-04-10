@@ -85,8 +85,13 @@
             android:name=".lesson14.Lesson14Activity"
             android:label="Lesson14">
         </activity>
-        <activity android:name=".lesson15.Lesson15"
+        <activity
+            android:name=".lesson15.Lesson15"
             android:label="Lesson 15">
+        </activity>
+        <activity android:name=".lesson16.Lesson16">
+        </activity>
+        <activity android:name=".lesson17.Lesson17">
         </activity>
     </application>
 

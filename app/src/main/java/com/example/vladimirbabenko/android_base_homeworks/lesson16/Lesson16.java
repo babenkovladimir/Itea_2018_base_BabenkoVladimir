@@ -8,6 +8,6 @@ public class Lesson16 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lesson16);
+        setContentView(com.example.vladimirbabenko.android_base_homeworks.R.layout.activity_lesson16);
     }
 }
