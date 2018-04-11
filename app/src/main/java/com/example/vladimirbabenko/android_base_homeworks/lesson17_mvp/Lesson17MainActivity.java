@@ -19,7 +19,7 @@ public class Lesson17MainActivity extends AppCompatActivity implements ILesson17
         setContentView(R.layout.activity_lesson17);
 
         mPresenter = new Lesson17MainActivityPresenter();
-        mPresenter.bind(this);
+        mPresenter.bind(this); // Биндинг активити к презентеру
 
         findViewById(R.id.btPresentersAction).setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
@@ -36,7 +36,7 @@ public class Lesson17MainActivity extends AppCompatActivity implements ILesson17
 
     @Override protected void onDestroy() {
         super.onDestroy();
-        mPresenter.unBind();
+        mPresenter.unBind(); // Анбиндинг активити от презентера
     }
 
 

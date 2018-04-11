@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="bottom"
     android:orientation="vertical"
-    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BookPreviewActivity"
+    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_preview_activity_mvp.BookPreviewActivity"
 
     >
     <LinearLayout

@@ -52,13 +52,13 @@
         <activity android:name=".lesson6CalssMaterial.ArrayAdapterCustomActivity"/>
         <activity android:name=".lesson7_practice.LogoActivity"/>
         <activity
-            android:name=".lesson7_practice.BooksListActivity"
+            android:name=".lesson7_practice.book_list_activity_mvp.BooksListActivity"
             android:label="Books info list"/>
         <activity
             android:name=".lesson7_practice.AddBookActivity"
             android:label="Add Book"/>
         <activity
-            android:name=".lesson7_practice.BookPreviewActivity"
+            android:name=".lesson7_practice.book_preview_activity_mvp.BookPreviewActivity"
             android:label="Book preview">
         </activity>
         <activity android:name=".lesson9.AlertDialogActivity">

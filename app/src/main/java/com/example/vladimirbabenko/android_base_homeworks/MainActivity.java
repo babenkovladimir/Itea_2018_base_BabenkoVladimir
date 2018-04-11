@@ -17,7 +17,7 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.I
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.ArrayAdapterExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson6CalssMaterial.ArrayAdapterCustomActivity;
-import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.BooksListActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.LogoActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.data.DataManager;
 import com.example.vladimirbabenko.android_base_homeworks.lesson9.AlertDialogActivity;

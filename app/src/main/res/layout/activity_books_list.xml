@@ -7,7 +7,7 @@
     android:gravity="bottom"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity"
+    tools:context="com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.BooksListActivity"
     >
 
     <android.support.v4.widget.SwipeRefreshLayout

@@ -1,11 +1,9 @@
-package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice;
+package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
@@ -22,17 +20,17 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import com.example.vladimirbabenko.android_base_homeworks.MainActivity;
 import com.example.vladimirbabenko.android_base_homeworks.R;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.AddBookActivity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_preview_activity_mvp.BookPreviewActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
-import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.fragments.CongratulationDialog;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.fragments.CongratulationDialogKt;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.ItemClickSupport;
 import com.example.vladimirbabenko.android_base_homeworks.lesson8.base.BaseActivity;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class BooksListActivity extends BaseActivity {
+public class BooksListActivity extends BaseActivity implements IBookListActivity{
 
     @BindView(R.id.btAddBook) Button btAddBook;
     @BindView(R.id.rvBooksRecyclerView) RecyclerView booksRecyclerView;
@@ -40,9 +38,14 @@ public class BooksListActivity extends BaseActivity {
     private static List<BookEntity> books = new ArrayList<>();
     private BookRecycleViewAdapter adapter;
 
+    private BookListActivityPresenter_my mPresenter;
+
     @Override public void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_books_list);//Фича для ButterKnife
+        setContentView(R.layout.activity_books_list);// Фича для ButterKnife
         super.onCreate(savedInstanceState);
+
+        mPresenter = new BookListActivityPresenter_my(); // create Instance of
+        mPresenter.bind(this, getApplicationContext()); // binding activity to presenter
 
         setupUI();
         checkAndShowCongratulationFragment();
@@ -53,8 +56,8 @@ public class BooksListActivity extends BaseActivity {
         booksRecyclerView.setAdapter(adapter);
         booksRecyclerView.setLayoutManager(
             new LinearLayoutManager(this, LinearLayout.VERTICAL, false));
-        books = mDataManager.fetchMoks();
-        adapter.setBooks(books);
+
+        mPresenter.showListOfBooks();//
 
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override public void onRefresh() {
@@ -65,7 +68,8 @@ public class BooksListActivity extends BaseActivity {
                     }
 
                     @Override public void onFinish() {
-                        adapter.notifyDataSetChanged();
+                        mPresenter.uploadLatestData();
+                        //adapter.notifyDataSetChanged();
                         mSwipeRefreshLayout.setRefreshing(false);
                     }
                 };
@@ -101,8 +105,8 @@ public class BooksListActivity extends BaseActivity {
                         })
                         .setPositiveButton("yes", new DialogInterface.OnClickListener() {
                             @Override public void onClick(DialogInterface dialog, int which) {
-                                books.remove(position);
-                                adapter.notifyDataSetChanged();
+                                // Presenter do callback to void showListOfBooks(List<BookEntity> list)
+                                mPresenter.removeBook(position);
                             }
                         })
                         .setCancelable(false);
@@ -122,6 +126,9 @@ public class BooksListActivity extends BaseActivity {
 
             @Override public void onFinish() {
                 Log.d(TAG, "onFinish: is dialog shown" +mDataManager.getPrefs().isDialogShown());
+
+
+
                 if (!mDataManager.getPrefs().isDialogShown()) {
                     FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
@@ -167,5 +174,24 @@ public class BooksListActivity extends BaseActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        mPresenter.unBind();
+    }
+
+    // Имплементация маетода, которая будет вызвана внутри презентер
+
+
+    @Override public void showInfo() {
+        // Do nothick
+    }
+
+    /*
+    * All manipulyation with data is adapters'responce
+    * */
+    @Override public void showListOfBooks(List<BookEntity> list) {
+        adapter.setBooks(list);
     }
 }

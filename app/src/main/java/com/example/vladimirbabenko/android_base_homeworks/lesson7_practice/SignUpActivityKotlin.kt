@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.example.vladimirbabenko.android_base_homeworks.R
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.BooksListActivity
 import kotlinx.android.synthetic.main.activity_sign_up_kotlin.btSignInSignUpScreenKotlin
 import kotlinx.android.synthetic.main.activity_sign_up_kotlin.etEmailSignUpScreenKotlin
 import kotlinx.android.synthetic.main.activity_sign_up_kotlin.etNameSignUpScreenKotlin

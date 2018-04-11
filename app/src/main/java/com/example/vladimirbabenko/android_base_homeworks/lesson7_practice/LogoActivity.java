@@ -12,7 +12,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 import butterknife.OnTextChanged;
 import com.example.vladimirbabenko.android_base_homeworks.R;
-import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.BooksListActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson8.base.BaseActivity;
 
 public class LogoActivity extends BaseActivity {
