@@ -91,7 +91,7 @@
         </activity>
         <activity android:name=".lesson16.Lesson16">
         </activity>
-        <activity android:name=".lesson17.Lesson17">
+        <activity android:name=".lesson17_mvp.Lesson17MainActivity">
         </activity>
     </application>
 

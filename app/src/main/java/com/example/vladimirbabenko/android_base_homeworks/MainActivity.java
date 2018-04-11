@@ -12,7 +12,7 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson13.Lesson13;
 import com.example.vladimirbabenko.android_base_homeworks.lesson14.Lesson14Activity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson15.Lesson15;
 import com.example.vladimirbabenko.android_base_homeworks.lesson16.Lesson16;
-import com.example.vladimirbabenko.android_base_homeworks.lesson17.Lesson17;
+import com.example.vladimirbabenko.android_base_homeworks.lesson17_mvp.Lesson17MainActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4ClassMaterial.IntentExampleActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson4HomeWork.ColorPickerRezultActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson5ClassMaterial.ArrayAdapterExampleActivity;
@@ -20,7 +20,6 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson6CalssMaterial.A
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.BooksListActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.LogoActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.data.DataManager;
-import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.utils.BooksConstants;
 import com.example.vladimirbabenko.android_base_homeworks.lesson9.AlertDialogActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -94,6 +93,6 @@ public class MainActivity extends AppCompatActivity {
         btLesson14.setOnClickListener(view -> startActivity(new Intent(this, Lesson14Activity.class)));
         btLesson15.setOnClickListener(view -> startActivity(new Intent(this, Lesson15.class)));
         btLesson16.setOnClickListener(view -> startActivity(new Intent(this, Lesson16.class)));
-        btLesson17.setOnClickListener(view -> startActivity(new Intent(this, Lesson17.class)));
+        btLesson17.setOnClickListener(view -> startActivity(new Intent(this, Lesson17MainActivity.class)));
     }
 }
