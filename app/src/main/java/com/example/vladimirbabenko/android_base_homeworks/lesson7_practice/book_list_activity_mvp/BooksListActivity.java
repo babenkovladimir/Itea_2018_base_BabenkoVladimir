@@ -21,6 +21,9 @@ import butterknife.OnClick;
 import com.example.vladimirbabenko.android_base_homeworks.MainActivity;
 import com.example.vladimirbabenko.android_base_homeworks.R;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.AddBookActivity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.adapters.BookRecycleViewAdapter;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.mvp.BookListActivityPresenter_my;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.mvp.IBookListActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_preview_activity_mvp.BookPreviewActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.entity.BookEntity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.fragments.CongratulationDialogKt;
@@ -30,7 +33,7 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson8.base.BaseActiv
 import java.util.ArrayList;
 import java.util.List;
 
-public class BooksListActivity extends BaseActivity implements IBookListActivity{
+public class BooksListActivity extends BaseActivity implements IBookListActivity {
 
     @BindView(R.id.btAddBook) Button btAddBook;
     @BindView(R.id.rvBooksRecyclerView) RecyclerView booksRecyclerView;

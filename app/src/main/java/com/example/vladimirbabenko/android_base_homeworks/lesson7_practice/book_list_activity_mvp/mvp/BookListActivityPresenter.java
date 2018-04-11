@@ -1,7 +1,8 @@
-package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp;
+package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.mvp;
 
 import android.content.Context;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.base_mvp.BasePresenter_my;
+import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.BooksListActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.data.DataManager;
 import org.jetbrains.annotations.Nullable;
 

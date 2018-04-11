@@ -1,4 +1,4 @@
-package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp;
+package com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_list_activity_mvp.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
