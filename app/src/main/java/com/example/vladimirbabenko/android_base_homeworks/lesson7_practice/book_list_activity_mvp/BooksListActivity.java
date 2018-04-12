@@ -38,7 +38,6 @@ public class BooksListActivity extends BaseActivity implements IBookListActivity
     @BindView(R.id.btAddBook) Button btAddBook;
     @BindView(R.id.rvBooksRecyclerView) RecyclerView booksRecyclerView;
     @BindView(R.id.srlSwipeRefresh) SwipeRefreshLayout mSwipeRefreshLayout;
-    private static List<BookEntity> books = new ArrayList<>();
     private BookRecycleViewAdapter adapter;
 
     private BookListActivityPresenter_my mPresenter;
@@ -72,7 +71,6 @@ public class BooksListActivity extends BaseActivity implements IBookListActivity
 
                     @Override public void onFinish() {
                         mPresenter.uploadLatestData();
-                        //adapter.notifyDataSetChanged();
                         mSwipeRefreshLayout.setRefreshing(false);
                     }
                 };
@@ -87,7 +85,6 @@ public class BooksListActivity extends BaseActivity implements IBookListActivity
                     Intent intent = new Intent(getApplicationContext(), BookPreviewActivity.class);
                     intent.putExtra(BooksConstants.BOOK_ENTITY_KEY_PREVIEW,
                         adapter.getBooks().get(position));
-
                     startActivity(intent);
                 }
             })
@@ -137,7 +134,6 @@ public class BooksListActivity extends BaseActivity implements IBookListActivity
 
                     CongratulationDialogKt.Companion.newInstance(null).show(ft, "Congratulation dialog");
                     //CongratulationDialog.newInstance(null).show(ft, "CongratulationDialog");
-
                 }
             }
         };
@@ -184,9 +180,7 @@ public class BooksListActivity extends BaseActivity implements IBookListActivity
         mPresenter.unBind();
     }
 
-    // Имплементация маетода, которая будет вызвана внутри презентер
-
-
+    // Имплементация маетода, которая будет вызвана внутри презенте
     @Override public void showInfo() {
         // Do nothick
     }
