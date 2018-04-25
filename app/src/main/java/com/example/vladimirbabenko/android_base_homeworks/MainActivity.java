@@ -21,12 +21,13 @@ import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.book_
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.LogoActivity;
 import com.example.vladimirbabenko.android_base_homeworks.lesson7_practice.data.DataManager;
 import com.example.vladimirbabenko.android_base_homeworks.lesson9.AlertDialogActivity;
+import com.example.vladimirbabenko.android_base_homeworks.lesson_21_event_bus.EventBusParenActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btShowSignInActivity, btShowOtherTasks, btCustomUserViewActivity, btDynamicGui,
         btColorPicker, btImplicitCalls, btArrayAdapterAndLifecycle, bCustomArrayAdapter, btLesson7Practice, btLesson9Practice, btLesson10Practice,btLesson12DialogFragment, btLesson13, btLesson14, btLesson15
-        ,btLesson16, btLesson17;
+        ,btLesson16, btLesson17, btLesson21;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         btLesson15 = (Button) findViewById(R.id.btLesson15);
         btLesson16 = (Button) findViewById(R.id.btLesson16);
         btLesson17 = (Button) findViewById(R.id.btLesson17);
+        btLesson21 = (Button) findViewById(R.id.btLesson21);
 
         btShowSignInActivity.setOnClickListener(
             view -> startActivity(new Intent(this, MainActivityHomeWorkScreen.class)));
@@ -94,5 +96,6 @@ public class MainActivity extends AppCompatActivity {
         btLesson15.setOnClickListener(view -> startActivity(new Intent(this, Lesson15.class)));
         btLesson16.setOnClickListener(view -> startActivity(new Intent(this, Lesson16.class)));
         btLesson17.setOnClickListener(view -> startActivity(new Intent(this, Lesson17MainActivity.class)));
+        btLesson21.setOnClickListener(view -> startActivity(new Intent(this, EventBusParenActivity.class)));
     }
 }
